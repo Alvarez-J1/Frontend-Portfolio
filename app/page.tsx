@@ -747,8 +747,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   Let&apos;s Connect!
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-slate-300">
-                  I&apos;m open to frontend roles, collaborations, and projects
-                  where strong interface quality matters.
+                I&apos;m open to developer roles, collaborations, and projects focused on building modern, user-friendly web experiences.
                 </p>
                 <div className="mt-10 grid gap-4">
                   <a
