@@ -817,7 +817,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 <span className="mb-2 block text-sm font-bold text-white">Your Name</span>
                 <input
                   className="w-full rounded-2xl border border-white/10 bg-ink/70 px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10"
-                  placeholder="Jane Recruiter"
+                  placeholder="Jane Tyler"
                   type="text"
                   name="name"
                 />
@@ -828,7 +828,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 </span>
                 <input
                   className="w-full rounded-2xl border border-white/10 bg-ink/70 px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10"
-                  placeholder="jane@company.com"
+                  placeholder="Jane@company.com"
                   type="email"
                   name="email"
                 />
