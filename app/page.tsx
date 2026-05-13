@@ -31,7 +31,7 @@ const navItems = [
 
 const skills = [
   {
-    title: "CORE STACK",
+    title: "Core Stack",
     icon: Code2,
     items: [ "HTML5", "CSS3","JavaScript (ES6+)", "TypeScript"],
   },
