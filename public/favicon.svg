@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Joel Alvarez favicon</title>
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#09264a"/>
+      <stop offset=".45" stop-color="#03101f"/>
+      <stop offset="1" stop-color="#020712"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="10" y1="48" x2="55" y2="13" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60c6ff"/>
+      <stop offset=".45" stop-color="#1688ff"/>
+      <stop offset="1" stop-color="#006cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="3" y="3" width="58" height="58" rx="12" fill="none" stroke="#1688ff" stroke-opacity=".36" stroke-width="2"/>
+  <path
+    d="M30 12v27.5c0 8-5.2 13-13 13-4.9 0-8.9-2-11.4-5.6l5.5-5.1c1.5 2.2 3.2 3.2 5.4 3.2 3.1 0 5-2 5-5.9V12H30Z"
+    fill="url(#mark)"
+  />
+  <path
+    d="M43.1 12h7.2L61 52h-8.2l-1.8-7.4H40.5L38.7 52h-8.1L43.1 12Zm6.1 25.6-3.3-13.4-3.4 13.4h6.7Z"
+    fill="url(#mark)"
+  />
+  <path
+    d="M12 50c9-5.5 19.5-8.2 31.7-7.7"
+    fill="none"
+    stroke="#79d4ff"
+    stroke-linecap="round"
+    stroke-width="2.6"
+    opacity=".9"
+  />
+</svg>

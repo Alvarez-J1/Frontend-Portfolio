@@ -55,6 +55,12 @@ body::-webkit-scrollbar-thumb {
   backdrop-filter: blur(22px);
 }
 
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(17, 28, 39, 0.95) 0%, rgba(10, 16, 24, 0.98) 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
 .text-balance {
   text-wrap: balance;
 }

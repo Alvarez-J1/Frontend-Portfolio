@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title">
+  <title id="title">Joel Alvarez signature logo</title>
+  <defs>
+    <filter id="blueGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="0 0 0 0 0.02 0 0 0 0 0.35 0 0 0 0 1 0 0 0 0.95 0"
+        result="glow"
+      />
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="signatureBlue" x1="70" y1="160" x2="700" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38a8ff"/>
+      <stop offset="0.42" stop-color="#1688ff"/>
+      <stop offset="1" stop-color="#006eff"/>
+    </linearGradient>
+  </defs>
+  <text
+    x="54"
+    y="135"
+    fill="url(#signatureBlue)"
+    filter="url(#blueGlow)"
+    font-family="'Segoe Script', 'Brush Script MT', 'Lucida Handwriting', cursive"
+    font-size="92"
+    font-weight="400"
+    letter-spacing="1"
+  >
+    Joel Alvarez
+  </text>
+  <path
+    d="M52 151c82-31 163-36 251-10 49 14 99 14 151-1 74-21 149-24 252-9"
+    fill="none"
+    stroke="#1688ff"
+    stroke-linecap="round"
+    stroke-width="3"
+    opacity=".55"
+    filter="url(#blueGlow)"
+  />
+</svg>

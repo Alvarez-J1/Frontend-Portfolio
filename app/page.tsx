@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
   Code2,
-  GitBranch,
   Layers3,
   Mail,
   MapPin,
@@ -16,37 +15,248 @@ import {
   Sparkles,
   X,
   Zap,
-  LinkIcon
 } from "lucide-react";
 import type { ReactNode } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const techIconClass = "size-7 shrink-0 block";
+
+function TechIcon({ children }: { children: ReactNode }) {
+  return (
+    <span className="inline-flex size-8 items-center justify-center">
+      {children}
+    </span>
+  );
+}
+
+function TechLogoImage({ alt, src }: { alt: string; src: string }) {
+  return (
+    <TechIcon>
+      <Image
+        src={src}
+        alt={alt}
+        width={28}
+        height={28}
+        className="size-7 object-contain"
+      />
+    </TechIcon>
+  );
+}
+
+const heroTechnologies = [
+  {
+    name: "JavaScript",
+    accent: "#f7df1e",
+    icon: <TechLogoImage src="/tech/javascript.svg" alt="JavaScript" />,
+  },
+  {
+    name: "React",
+    accent: "#61dafb",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <circle cx="12" cy="12" r="2.15" fill="#61DAFB" />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="9.5"
+            ry="3.8"
+            fill="none"
+            stroke="#61DAFB"
+            strokeWidth="1.15"
+          />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="9.5"
+            ry="3.8"
+            fill="none"
+            stroke="#61DAFB"
+            strokeWidth="1.15"
+            transform="rotate(60 12 12)"
+          />
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="9.5"
+            ry="3.8"
+            fill="none"
+            stroke="#61DAFB"
+            strokeWidth="1.15"
+            transform="rotate(120 12 12)"
+          />
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "TypeScript",
+    accent: "#3178c6",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#3178C6"
+            d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"
+          />
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "HTML",
+    accent: "#e34f26",
+    icon: <TechLogoImage src="/tech/html5.svg" alt="HTML" />,
+  },
+  {
+    name: "CSS",
+    accent: "#1572b6",
+    icon: <TechLogoImage src="/tech/css3.svg" alt="CSS" />,
+  },
+  {
+    name: "Sass",
+    accent: "#cc6699",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <circle cx="12" cy="12" r="10.2" fill="#cc6699" />
+          <text
+            x="12"
+            y="15.8"
+            textAnchor="middle"
+            fontFamily="Arial, sans-serif"
+            fontSize="10.2"
+            fontWeight="800"
+            fill="#fff"
+          >
+            S
+          </text>
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "Material UI",
+    accent: "#007fff",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#007fff"
+            d="M2.1 5.2 8 8.6v6.9l3.9 2.3 3.9-2.3v-4.4l2.1 1.2v4.4l4-2.3V7.5l-4 2.3v-4.6L14 7.5l-2.1-1.2L8 4.1 4 6.4 2.1 5.2Z"
+          />
+          <path
+            fill="#5ec8ff"
+            d="m8 8.6 3.9-2.3 2.1 1.2-3.9 2.3L8 8.6Zm7.8 2.5 2.1-1.3 4 2.4-4 2.3-2.1-1.2v-2.2Z"
+          />
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "Node.js",
+    accent: "#68a063",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#68a063"
+            d="m12 1.8 9 5.1v10.2l-9 5.1-9-5.1V6.9l9-5.1Z"
+          />
+          <path
+            fill="#3c873a"
+            d="M12 4.5 18.6 8v7.9L12 19.6 5.4 15.9V8L12 4.5Z"
+          />
+          <text
+            x="12"
+            y="14.5"
+            textAnchor="middle"
+            fontFamily="Arial, sans-serif"
+            fontSize="6.4"
+            fontWeight="800"
+            fill="#fff"
+          >
+            JS
+          </text>
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "Express",
+    accent: "#f8fafc",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <rect
+            x="2.5"
+            y="5"
+            width="19"
+            height="14"
+            rx="4"
+            fill="#f8fafc"
+          />
+          <text
+            x="12"
+            y="15"
+            textAnchor="middle"
+            fontFamily="Arial, sans-serif"
+            fontSize="7.8"
+            fontWeight="800"
+            fill="#101827"
+          >
+            ex
+          </text>
+        </svg>
+      </TechIcon>
+    ),
+  },
+  {
+    name: "MongoDB",
+    accent: "#47a248",
+    icon: (
+      <TechIcon>
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#47a248"
+            d="M12 2.1c3.4 3.2 5.1 6.2 5.1 9 0 3.7-2.1 6.5-5.1 8.7-3-2.2-5.1-5-5.1-8.7 0-2.8 1.7-5.8 5.1-9Z"
+          />
+          <path
+            fill="#2f6f36"
+            d="M12 2.1v17.7c3-2.2 5.1-5 5.1-8.7 0-2.8-1.7-5.8-5.1-9Z"
+            opacity=".55"
+          />
+          <path
+            d="M12 6.2v14.9"
+            stroke="#d7ffd7"
+            strokeLinecap="round"
+            strokeWidth="1.05"
+          />
+        </svg>
+      </TechIcon>
+    ),
+  },
+];
 
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
-const skills = [
+const socialLinks = [
   {
-    title: "Core Stack",
-    icon: Code2,
-    items: [ "HTML5", "CSS3","JavaScript (ES6+)", "TypeScript"],
+    label: "GitHub",
+    href: "https://github.com/Alvarez-J1",
+    icon: <GithubIcon size={18} />,
   },
   {
-    title: "Framework Stack",
-    icon: Sparkles,
-    items: ["React", "Next.js", "SCSS", "Material UI", "React Router", "Redux"
-],
-  },
-  {
-    title: "Backend & Tools",
-    icon: Layers3,
-    items: ["Node.js", "Express", "MongoDB", "FireBase", "Git/Github", "Postman", "Vercel", "Render", "Chrome DevTools", "VS Code"],
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/joel-alvarez-software-engineer",
+    icon: <LinkedInIcon size={18} />,
   },
 ];
+
 
 const projects = [
   {
@@ -160,11 +370,6 @@ const projects = [
   },
 ];
 
-const metrics = [
-  { value: "4", label: "Featured builds" },
-  { value: "8+", label: "Core technologies" },
-  { value: "100%", label: "Frontend focus" },
-];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },
@@ -189,14 +394,14 @@ function SectionHeading({
       variants={fadeUp}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">
+      <p className="mb-5 text-3xl font-black uppercase tracking-normal text-cyanline sm:text-4xl lg:text-4xl">
         {eyebrow}
       </p>
-      <h2 className="text-balance text-3xl font-black text-white sm:text-4xl lg:text-5xl">
+      <h2 className="text-balance text-4xl font-black text-white sm:text-5xl lg:text-5xl">
         {title}
       </h2>
       {copy ? (
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-5xl">
           {copy}
         </p>
       ) : null}
@@ -274,34 +479,54 @@ function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#home" className="flex items-center gap-3" aria-label="Joel Alvarez home">
+        <a href="#home" className="flex items-center" aria-label="Joel Alvarez home">
           <motion.span
-            className="grid h-11 w-11 place-items-center rounded-2xl bg-electric text-lg font-black text-white shadow-aura"
-            whileHover={{ rotate: -8, scale: 1.06 }}
+            className="relative block h-14 w-44 sm:w-56"
+            whileHover={{ y: -2, scale: 1.03 }}
           >
-            JA
+            <Image
+              src="/joel-alvarez-logo.svg"
+              alt="Joel Alvarez"
+              fill
+              priority
+              sizes="(min-width: 640px) 224px, 176px"
+              className="object-contain object-left"
+            />
           </motion.span>
-          <span className="hidden text-lg font-bold text-white sm:block">
-            Joel Alvarez
-          </span>
         </a>
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-semibold text-slate-300 transition hover:text-white"
-            >
-              {item.label}
-            </a>
-          ))}
+          <div className="hidden items-center gap-9 md:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-base font-bold text-slate-300 transition hover:text-white lg:text-[1.05rem]"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href="#contact"
+            className="rounded-2xl bg-white px-5 py-3 text-base font-bold text-ink transition hover:bg-cyanline hover:shadow-aura"
+          >
+            Let&apos;s Connect
+          </a>
+          <div className="flex items-center gap-2">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white"
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
-        <a
-          href="#contact"
-          className="hidden rounded-2xl bg-white px-5 py-3 text-sm font-bold text-ink transition hover:bg-cyanline hover:shadow-aura md:inline-flex"
-        >
-          Let&apos;s Connect
-        </a>
         <button
           type="button"
           className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white md:hidden"
@@ -324,11 +549,26 @@ function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-2xl px-4 py-3 text-base font-semibold text-slate-200 hover:bg-white/10 hover:text-white"
+                className="rounded-2xl px-4 py-3 text-lg font-bold text-slate-200 hover:bg-white/10 hover:text-white"
               >
                 {item.label}
               </a>
             ))}
+            <div className="mt-3 flex items-center gap-3 px-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white"
+                  aria-label={link.label}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       ) : null}
@@ -336,11 +576,122 @@ function Navbar() {
   );
 }
 
+function AnimatedTechStack() {
+  const prefersReducedMotion = useReducedMotion();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % heroTechnologies.length);
+    }, 2600);
+    return () => clearInterval(interval);
+  }, [prefersReducedMotion]);
+
+  return (
+    <div className="mt-8 max-w-3xl">
+      <p className="text-xl font-semibold uppercase tracking-[0.18em] text-cyanline">
+        Working with modern technologies
+      </p>
+      <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-5 sm:gap-3">
+        {heroTechnologies.map((tech, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <motion.button
+              key={tech.name}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              onMouseEnter={() => setActiveIndex(index)}
+              className={`group relative flex h-[5.35rem] min-w-0 flex-col items-center justify-center gap-2 overflow-hidden rounded-lg border px-2 text-center backdrop-blur-xl transition-colors ${
+                isActive
+                  ? "text-white"
+                  : "border-white/10 bg-white/[0.035] text-slate-400 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+              }`}
+              style={
+                isActive
+                  ? {
+                      borderColor: `${tech.accent}99`,
+                      background: `linear-gradient(145deg, ${tech.accent}26, rgba(255, 255, 255, 0.055))`,
+                      boxShadow: `0 0 28px ${tech.accent}38`,
+                    }
+                  : undefined
+              }
+              aria-label={`${tech.name} technology`}
+              aria-pressed={isActive}
+              initial={false}
+              animate={
+                isActive && !prefersReducedMotion
+                  ? {
+                      y: [0, -5, 0],
+                      scale: [1, 1.035, 1],
+                      rotate: [0, -1.5, 1.5, 0],
+                    }
+                  : { y: 0, scale: 1, rotate: 0 }
+              }
+              whileHover={
+                prefersReducedMotion ? undefined : { y: -4, scale: 1.02 }
+              }
+              whileTap={{ scale: 0.98 }}
+              transition={
+                isActive && !prefersReducedMotion
+                  ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
+                  : { duration: 0.35 }
+              }
+            >
+              <motion.span
+                className="pointer-events-none absolute -inset-8 rounded-full opacity-0 blur-xl"
+                style={{
+                  background: `radial-gradient(circle, ${tech.accent}66 0%, transparent 62%)`,
+                }}
+                animate={
+                  isActive && !prefersReducedMotion
+                    ? { opacity: [0.18, 0.34, 0.18], scale: [0.9, 1.08, 0.9] }
+                    : { opacity: 0, scale: 0.96 }
+                }
+                transition={
+                  isActive && !prefersReducedMotion
+                    ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
+                    : { duration: 0.25 }
+                }
+              />
+              <span className="relative flex size-10 items-center justify-center">
+                {tech.icon}
+              </span>
+              <motion.span
+                className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none sm:text-xs"
+                initial={false}
+                animate={{ color: isActive ? tech.accent : "currentColor" }}
+                transition={{ duration: 0.25 }}
+              >
+                {tech.name}
+              </motion.span>
+              <motion.span
+                className="absolute bottom-1.5 h-1 w-1 rounded-full"
+                style={{ backgroundColor: tech.accent }}
+                initial={false}
+                animate={{
+                  opacity: isActive ? 1 : 0,
+                  scale: isActive && !prefersReducedMotion ? [0.8, 1.25, 0.8] : 1,
+                }}
+                transition={
+                  isActive && !prefersReducedMotion
+                    ? { duration: 1.2, repeat: Infinity, ease: "easeInOut" }
+                    : { duration: 0.2 }
+                }
+              />
+            </motion.button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-20 pt-32 sm:px-8 lg:pt-24"
+      className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-8 pt-32 sm:px-8 sm:pb-20 lg:pt-45"
     >
       <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div
@@ -348,15 +699,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyanline/30 bg-cyanline/10 px-4 py-2 text-sm font-semibold text-cyanline shadow-[0_0_30px_rgba(94,213,255,0.12)]">
-            <span className="h-2 w-2 rounded-full bg-cyanline shadow-[0_0_16px_rgba(94,213,255,0.9)]" />
-            Available for developer roles
-          </div>
           <h1 className="text-balance text-4xl font-black leading-[0.98] text-white sm:text-5xl lg:text-6xl 2xl:text-7xl">
-            Frontend developer building{" "}
-            <span className="bg-gradient-to-r from-electric via-cyanline to-white bg-clip-text text-transparent">
-             modern, responsive web experiences.
-            </span>
+            Front-end Developer 
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300 sm:text-xl">
            I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
@@ -381,18 +725,7 @@ function Hero() {
               <Mail size={19} />
             </motion.a>
           </div>
-          <div className="mt-12 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/10 pt-7">
-            {metrics.map((metric) => (
-              <div key={metric.label}>
-                <p className="text-2xl font-black text-white sm:text-3xl">
-                  {metric.value}
-                </p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-sm">
-                  {metric.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          <AnimatedTechStack />
         </motion.div>
 
         <motion.div
@@ -440,7 +773,6 @@ function Hero() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm text-slate-400">Now building</p>
-                    <p className="font-bold text-white">Recruiter-ready frontend systems</p>
                   </div>
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-electric text-white">
                     <MonitorSmartphone size={21} />
@@ -455,108 +787,6 @@ function Hero() {
   );
 }
 
-function About() {
-  return (
-    <section id="about" className="px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="About"
-          title="Clean code, modern interfaces, and responsive user experiences."
-          copy="I bring frontend ideas from rough sketches to polished, responsive experiences that feel intuitive and easy to use across devices."
-        />
-        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.div
-            className="glass-panel rounded-[1.75rem] p-7 sm:p-9"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-120px" }}
-            variants={fadeUp}
-            transition={{ duration: 0.65 }}
-          >
-            <p className="text-lg leading-9 text-slate-200">
-             I’m a frontend developer focused on building responsive web applications with clean UI, strong usability, and maintainable code. I enjoy creating interfaces that simplify complex workflows and provide smooth user experiences across devices.
-            </p>
-            <p className="mt-6 text-lg leading-9 text-slate-300">
-            My work emphasizes accessibility, responsive design, component structure, and polished frontend interactions using modern technologies like React, JavaScript, Next.js, and TypeScript.
-            </p>
-          </motion.div>
-          <motion.div
-            className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-120px" }}
-            transition={{ staggerChildren: 0.1 }}
-          >
-            {[
-              ["Focus", "Responsive frontend applications with clean UI and intuitive interactions."],
-              ["Style", "Modern interfaces with thoughtful spacing, smooth interactions, and clear visual hierarchy."],
-              ["Mindset", "Accessible, maintainable code that supports real product goals."],
-            ].map(([title, text]) => (
-              <motion.div
-                key={title}
-                className="glass-panel rounded-[1.5rem] p-6"
-                variants={fadeUp}
-                transition={{ duration: 0.55 }}
-              >
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyanline">
-                  {title}
-                </p>
-                <p className="leading-7 text-slate-300">{text}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Skills() {
-  return (
-    <section id="skills" className="px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Skills"
-          title="Frontend technologies focused on responsive and modern web applications."
-        />
-        <div className="grid gap-5 lg:grid-cols-3">
-          {skills.map((group, index) => {
-            const Icon = group.icon;
-            return (
-              <motion.article
-                key={group.title}
-                className="group glass-panel relative overflow-hidden rounded-[1.75rem] p-7"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.58, delay: index * 0.08 }}
-                whileHover={{ y: -8 }}
-              >
-                <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-electric/10 blur-3xl transition group-hover:bg-cyanline/20" />
-                <div className="relative mb-8 grid h-14 w-14 place-items-center rounded-2xl bg-electric/20 text-cyanline ring-1 ring-cyanline/20">
-                  <Icon size={25} />
-                </div>
-                <h3 className="relative text-2xl font-black text-white">
-                  {group.title}
-                </h3>
-                <div className="relative mt-6 flex flex-wrap gap-3">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm font-semibold text-slate-200 transition group-hover:border-cyanline/30"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ProjectScreenshot({
   accent,
@@ -568,23 +798,48 @@ function ProjectScreenshot({
   src: string;
 }) {
   return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-[1.25rem] border border-white/10 bg-ink">
+    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a1018]">
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-20`}
+        className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-[0.12]`}
       />
       <Image
         src={src}
         alt={alt}
         fill
-        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="object-cover object-top transition duration-700 group-hover:scale-105"
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-      <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/10 bg-ink/75 px-3 py-2 text-xs font-bold text-frost backdrop-blur-xl">
-        <span className="h-2 w-2 rounded-full bg-cyanline shadow-[0_0_14px_rgba(94,213,255,0.9)]" />
-        Screenshot
+      
       </div>
-    </div>
+  
+  );
+}
+
+function GithubIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.86 2.805 1.335 3.495 1.02.105-.78.42-1.335.765-1.635-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.75 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.71.24 2.85.12 3.75.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.825 1.08.825 2.205 0 1.59-.015 2.85-.015 3.225 0 .315.225.69.825.57A8.34 8.34 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V8.99h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V8.99h3.56v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z" />
+    </svg>
   );
 }
 
@@ -600,8 +855,8 @@ function ProjectAction({
   primary?: boolean;
 }) {
   const className = primary
-    ? "inline-flex flex-1 items-center justify-center gap-2 rounded-2xl bg-electric px-4 py-3 text-sm font-black text-white shadow-aura transition hover:bg-[#39a2ff]"
-    : "inline-flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:border-cyanline/40 hover:bg-white/20";
+    ? "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-electric px-4 py-3 text-sm font-bold text-white transition hover:bg-[#39a2ff]"
+    : "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-[#141c28] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#1a2433]";
 
   if (!href) {
     return (
@@ -627,65 +882,66 @@ function ProjectAction({
 
 function Projects() {
   return (
-    <section id="projects" className="px-5 py-24 sm:px-8">
+    <section id="projects" className="px-5 pb-8 pt-12 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Featured Projects"
-          title="Frontend projects focused on clean UI, responsiveness, and real-world user experience."
-          copy="A collection of responsive applications built with modern frontend technologies, emphasizing polished interfaces, usability, and scalable component structure."
+          title="Frontend projects focused on clean UI & responsiveness."
         />
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
           {projects.map((project, index) => (
             <motion.article
               key={project.name}
-              className="group glass-panel overflow-hidden rounded-[1.75rem] p-4"
+              className="group project-card flex h-full flex-col overflow-hidden rounded-2xl p-5 sm:p-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
               transition={{ duration: 0.62, delay: index * 0.08 }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -6 }}
             >
               <ProjectScreenshot
                 accent={project.accent}
                 alt={project.screenshotAlt}
                 src={project.screenshot}
               />
-              <div className="p-4 pt-6">
-                <div className="mb-4 flex items-center justify-between gap-4">
+              <div className="flex flex-1 flex-col pt-5 sm:pt-6">
+                <div className="mb-3 flex items-start justify-between gap-4">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyanline">
                     {project.type}
                   </p>
                   <span
-                    className={`h-10 w-10 rounded-2xl bg-gradient-to-br ${project.accent} opacity-80 shadow-aura transition group-hover:scale-110`}
+                    className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br ${project.accent} shadow-[0_0_12px_rgba(94,213,255,0.5)]`}
                   />
                 </div>
-                <h3 className="text-2xl font-black text-white">{project.name}</h3>
-                <p className="mt-4 min-h-28 leading-7 text-slate-300">
+                <h3 className="text-xl font-bold text-white sm:text-2xl">
+                  {project.name}
+                </h3>
+                <p className="mt-4 flex-1 leading-7 text-slate-300">
                   {project.summary}
                 </p>
-                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                   Tech Stack
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-cyanline/20 bg-cyanline/10 px-3 py-1.5 text-xs font-bold text-frost"
+                      className="rounded-full border border-white/[0.08] bg-[#141c28] px-3 py-1.5 text-xs font-medium text-slate-200"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
-                <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                <div className="mt-auto flex flex-wrap gap-3 pt-6">
                   {project.actions.map((action) => (
                     <ProjectAction
                       key={action.label}
                       href={action.href}
                       icon={
                         action.primary ? (
-                          <ArrowUpRight size={17} />
+                          <ArrowUpRight size={16} />
                         ) : (
-                          <GitBranch size={17} />
+                          <GithubIcon size={16} />
                         )
                       }
                       label={action.label}
@@ -727,7 +983,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 }
   return (
   
-    <section id="contact" className="px-5 py-24 sm:px-8">
+    <section id="contact" className="px-5 pb-20 pt-8 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="glass-panel overflow-hidden rounded-[2rem]">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
@@ -740,10 +996,10 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-electric/20 via-transparent to-transparent" />
               <div className="relative">
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-cyanline">
+                <p className="mb-4 text-base font-bold uppercase tracking-[0.2em] text-cyanline sm:text-lg">
                   Contact
                 </p>
-                <h2 className="text-balance text-4xl font-black leading-tight text-white sm:text-5xl">
+                <h2 className="text-balance text-5xl font-black leading-tight text-white sm:text-6xl">
                   Let&apos;s Connect!
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-slate-300">
@@ -777,8 +1033,8 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     rel="noreferrer"
                     className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4 transition hover:border-cyanline/40 hover:bg-white/10"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-electric/20 text-cyanline">
-                      <GitBranch size={21} />
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white text-ink">
+                      <GithubIcon size={23} />
                     </span>
                     <span>
                       <span className="block text-sm text-slate-400">GitHub</span>
@@ -792,11 +1048,11 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     rel="noreferrer"
                     className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4 transition hover:border-cyanline/40 hover:bg-white/10"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-electric/20 text-cyanline">
-                      <LinkIcon size={21} />
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#0a66c2] text-white">
+                      <LinkedInIcon size={23} />
                     </span>
                     <span>
-                      <span className="block text-sm text-slate-400">Linkedin</span>
+                      <span className="block text-sm text-slate-400">LinkedIn</span>
                       <span className="font-bold text-white">Joel Alvarez</span>
                     </span>
                     
@@ -842,10 +1098,10 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 />
               </label>
               {sent && (
-        <p className="mb-5 rounded-2xl border border-green-500/30 bg-green-500/10 px-4 py-4 font-semibold text-green-400">
-    ✓ Message sent successfully! I'll get back to you soon.
-  </p>
-)}
+                <p className="mb-5 rounded-2xl border border-green-500/30 bg-green-500/10 px-4 py-4 font-semibold text-green-400">
+                  Message sent successfully! I&apos;ll get back to you soon.
+                </p>
+              )}
               <motion.button
                 type="submit"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-electric px-6 py-4 text-base font-black text-white shadow-aura transition hover:bg-[#39a2ff]"
@@ -869,8 +1125,7 @@ export default function Home() {
       <AmbientBackground />
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
+      {/* <Skills /> */}
       <Projects />
       <Contact />
       <footer className="border-t border-white/10 px-5 py-10 sm:px-8">
