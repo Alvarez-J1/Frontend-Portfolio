@@ -21,23 +21,43 @@ import { useEffect, useMemo, useState } from "react";
 
 const techIconClass = "size-7 shrink-0 block";
 
-function TechIcon({ children }: { children: ReactNode }) {
+function TechIcon({
+  children,
+  className = "size-8",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <span className="inline-flex size-8 items-center justify-center">
+    <span className={`inline-flex ${className} items-center justify-center`}>
       {children}
     </span>
   );
 }
 
-function TechLogoImage({ alt, src }: { alt: string; src: string }) {
+function TechLogoImage({
+  alt,
+  src,
+  width = 28,
+  height = 28,
+  className = "size-7 object-contain",
+  wrapperClassName = "size-8",
+}: {
+  alt: string;
+  src: string;
+  width?: number;
+  height?: number;
+  className?: string;
+  wrapperClassName?: string;
+}) {
   return (
-    <TechIcon>
+    <TechIcon className={wrapperClassName}>
       <Image
         src={src}
         alt={alt}
-        width={28}
-        height={28}
-        className="size-7 object-contain"
+        width={width}
+        height={height}
+        className={className}
       />
     </TechIcon>
   );
@@ -87,6 +107,20 @@ const heroTechnologies = [
           />
         </svg>
       </TechIcon>
+    ),
+  },
+  {
+    name: "Next.js",
+    accent: "#ffffff",
+    icon: (
+      <TechLogoImage
+        src="/next.webp"
+        alt="Next.js"
+        width={52}
+        height={52}
+        className="size-10 scale-[1.38] object-cover object-center"
+        wrapperClassName="size-10 overflow-hidden rounded-full bg-black shadow-[0_0_18px_rgba(255,255,255,0.25)]"
+      />
     ),
   },
   {
@@ -260,7 +294,7 @@ const socialLinks = [
 
 const projects = [
   {
-    name: "SalesForce Dashboard",
+    name: "Datara",
     type: "Sales Analytics Dashboard",
     summary:
       "Datara is a responsive front-end sales analytics dashboard focused on clean UI, dashboard-style layouts, interactive data visualization, responsive design, and modern front-end architecture.",
@@ -279,7 +313,7 @@ const projects = [
     actions: [
       {
         label: "Live Demo",
-        href: "https://react-dashboard-murex.vercel.app/auth/signin?callbackUrl=%2F",
+        href: "https://datara-dashboard.vercel.app/",
         primary: true,
       },
       {
@@ -289,10 +323,10 @@ const projects = [
     ],
   },
   {
-    name: "WTWR",
+    name: "WeatherFit",
     type: "Weather Clothing App",
     summary:
-      "WTWR is a weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
+      "WeatherFit is a weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
     stack: [
       "React",
       "JavaScript ES6+",
@@ -309,7 +343,7 @@ const projects = [
     actions: [
       {
         label: "Live Demo",
-        href: "https://se-project-wtwr.onrender.com/",
+        href: "https://weatherfit-app.onrender.com/",
         primary: true,
       },
       {
@@ -359,7 +393,7 @@ const projects = [
     actions: [
       {
         label: "Live Demo",
-        href: "https://alvarez-j1.github.io/news-explorer-frontend/#/",
+        href: "https://alvarez-j1.github.io/NewsExplorer/",
         primary: true,
       },
       {
@@ -481,15 +515,15 @@ function Navbar() {
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#home" className="flex items-center" aria-label="Joel Alvarez home">
           <motion.span
-            className="relative block h-14 w-44 sm:w-56"
+            className="relative block h-16 w-64 sm:w-80 lg:w-96"
             whileHover={{ y: -2, scale: 1.03 }}
           >
             <Image
-              src="/joel-alvarez-logo.svg"
+              src="/joel-alvarez-logo.png"
               alt="Joel Alvarez"
               fill
               priority
-              sizes="(min-width: 640px) 224px, 176px"
+              sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
               className="object-contain object-left"
             />
           </motion.span>
@@ -593,7 +627,7 @@ function AnimatedTechStack() {
       <p className="text-xl font-semibold uppercase tracking-[0.18em] text-cyanline">
         Working with modern technologies
       </p>
-      <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-5 sm:gap-3">
+      <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
         {heroTechnologies.map((tech, index) => {
           const isActive = index === activeIndex;
           return (
@@ -762,7 +796,7 @@ function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-glass backdrop-blur-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-electric/10" />
               <Image
-                src="/joel-alvarez-headshot.jpg"
+                src="/park.png"
                 alt="Joel Alvarez portrait"
                 width={700}
                 height={700}

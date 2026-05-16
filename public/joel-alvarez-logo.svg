@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-labelledby="title">
   <title id="title">Joel Alvarez signature logo</title>
   <defs>
-    <filter id="blueGlow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+    <filter id="softGlow" x="-12%" y="-28%" width="124%" height="156%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
       <feColorMatrix
         in="blur"
         type="matrix"
-        values="0 0 0 0 0.02 0 0 0 0 0.35 0 0 0 0 1 0 0 0 0.95 0"
+        values="0 0 0 0 0.11 0 0 0 0 0.54 0 0 0 0 1 0 0 0 0.65 0"
         result="glow"
       />
       <feMerge>
@@ -14,31 +14,31 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient id="signatureBlue" x1="70" y1="160" x2="700" y2="52" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#38a8ff"/>
-      <stop offset="0.42" stop-color="#1688ff"/>
-      <stop offset="1" stop-color="#006eff"/>
+    <linearGradient id="signatureTone" x1="26" y1="105" x2="480" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5ed5ff"/>
+      <stop offset=".45" stop-color="#d9ecff"/>
+      <stop offset="1" stop-color="#1688ff"/>
     </linearGradient>
   </defs>
   <text
-    x="54"
-    y="135"
-    fill="url(#signatureBlue)"
-    filter="url(#blueGlow)"
+    x="18"
+    y="88"
+    fill="url(#signatureTone)"
+    filter="url(#softGlow)"
     font-family="'Segoe Script', 'Brush Script MT', 'Lucida Handwriting', cursive"
-    font-size="92"
-    font-weight="400"
-    letter-spacing="1"
+    font-size="70"
+    font-weight="600"
+    letter-spacing=".4"
   >
     Joel Alvarez
   </text>
   <path
-    d="M52 151c82-31 163-36 251-10 49 14 99 14 151-1 74-21 149-24 252-9"
+    d="M22 103c66-22 132-24 202-6 38 10 79 9 121-2 50-13 99-15 151-6"
     fill="none"
-    stroke="#1688ff"
+    stroke="#5ed5ff"
     stroke-linecap="round"
-    stroke-width="3"
-    opacity=".55"
-    filter="url(#blueGlow)"
+    stroke-width="3.2"
+    opacity=".78"
+    filter="url(#softGlow)"
   />
 </svg>
