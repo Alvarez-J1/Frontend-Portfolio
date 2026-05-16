@@ -393,7 +393,7 @@ const projects = [
     actions: [
       {
         label: "Live Demo",
-        href: "https://alvarez-j1.github.io/NewsExplorer/",
+        href: "https://news-explorer-ten.vercel.app/",
         primary: true,
       },
       {
