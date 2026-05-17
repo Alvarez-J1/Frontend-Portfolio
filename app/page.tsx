@@ -512,10 +512,10 @@ function Navbar() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-2xl">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+      <nav className="mx-auto grid h-20 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-5 sm:px-8">
         <a href="#home" className="flex items-center" aria-label="Joel Alvarez home">
           <motion.span
-            className="relative block h-16 w-64 sm:w-80 lg:w-96"
+            className="relative block h-14 w-56 sm:w-64 lg:h-16 lg:w-96"
             whileHover={{ y: -2, scale: 1.03 }}
           >
             <Image
@@ -523,12 +523,12 @@ function Navbar() {
               alt="Joel Alvarez"
               fill
               priority
-              sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
+              sizes="(min-width: 1024px) 384px, (min-width: 640px) 256px, 224px"
               className="object-contain object-left"
             />
           </motion.span>
         </a>
-          <div className="hidden items-center gap-9 md:flex">
+          <div className="hidden items-center justify-self-center gap-4 md:flex lg:gap-9">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -539,10 +539,10 @@ function Navbar() {
               </a>
             ))}
           </div>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex lg:gap-3">
           <a
             href="#contact"
-            className="rounded-2xl bg-white px-5 py-3 text-base font-bold text-ink transition hover:bg-cyanline hover:shadow-aura"
+            className="whitespace-nowrap rounded-xl bg-white px-3.5 py-2.5 text-sm font-bold text-ink transition hover:bg-cyanline hover:shadow-aura lg:rounded-2xl lg:px-5 lg:py-3 lg:text-base"
           >
             Let&apos;s Connect
           </a>
@@ -553,7 +553,7 @@ function Navbar() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white"
+                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white lg:h-11 lg:w-11 lg:rounded-2xl"
                 aria-label={link.label}
               >
                 {link.icon}
@@ -563,7 +563,7 @@ function Navbar() {
         </div>
         <button
           type="button"
-          className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-white md:hidden"
+          className="grid h-11 w-11 place-items-center justify-self-end rounded-2xl border border-white/10 bg-white/5 text-white md:hidden"
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
@@ -1017,12 +1017,12 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 }
   return (
   
-    <section id="contact" className="px-5 pb-20 pt-8 sm:px-8 sm:py-24">
+    <section id="contact" className="px-4 pb-14 pt-6 sm:px-6 sm:py-14 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="glass-panel overflow-hidden rounded-[2rem]">
+        <div className="glass-panel overflow-hidden rounded-[1.5rem] lg:rounded-[2rem]">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
             <motion.div
-              className="relative min-h-full p-7 sm:p-10 lg:p-12"
+              className="relative min-h-full p-5 sm:p-7 lg:p-12"
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -1030,49 +1030,49 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-electric/20 via-transparent to-transparent" />
               <div className="relative">
-                <p className="mb-4 text-base font-bold uppercase tracking-[0.2em] text-cyanline sm:text-lg">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyanline sm:text-base lg:text-lg">
                   Contact
                 </p>
-                <h2 className="text-balance text-5xl font-black leading-tight text-white sm:text-6xl">
+                <h2 className="text-balance text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
                   Let&apos;s Connect!
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-slate-300">
+                <p className="mt-4 text-base leading-7 text-slate-300 lg:mt-6 lg:text-lg lg:leading-8">
                 I&apos;m open to developer roles, collaborations, and projects focused on building modern, user-friendly web experiences.
                 </p>
-                <div className="mt-10 grid gap-4">
+                <div className="mt-6 grid gap-3 lg:mt-10 lg:gap-4">
                   <a
                     href="mailto:jge4991@gmail.com"
-                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4 transition hover:border-cyanline/40 hover:bg-white/10"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-electric/20 text-cyanline">
-                      <Mail size={21} />
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-12 lg:w-12 lg:rounded-2xl">
+                      <Mail size={19} />
                     </span>
                     <span>
-                      <span className="block text-sm text-slate-400">Email</span>
-                      <span className="font-bold text-white">Joel124@outlook.es</span>
+                      <span className="block text-xs text-slate-400 lg:text-sm">Email</span>
+                      <span className="text-sm font-bold text-white lg:text-base">Joel124@outlook.es</span>
                     </span>
                   </a>
-                  <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-electric/20 text-cyanline">
-                      <MapPin size={21} />
+                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 lg:gap-4 lg:rounded-2xl lg:p-4">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-12 lg:w-12 lg:rounded-2xl">
+                      <MapPin size={19} />
                     </span>
                     <span>
-                      <span className="block text-sm text-slate-400">Location</span>
-                      <span className="font-bold text-white">Union City, New Jersey</span>
+                      <span className="block text-xs text-slate-400 lg:text-sm">Location</span>
+                      <span className="text-sm font-bold text-white lg:text-base">Union City, New Jersey</span>
                     </span>
                   </div>
                   <a
                     href="https://github.com/Alvarez-J1"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4 transition hover:border-cyanline/40 hover:bg-white/10"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white text-ink">
-                      <GithubIcon size={23} />
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-ink lg:h-12 lg:w-12 lg:rounded-2xl">
+                      <GithubIcon size={20} />
                     </span>
                     <span>
-                      <span className="block text-sm text-slate-400">GitHub</span>
-                      <span className="font-bold text-white">Alvarez-J1</span>
+                      <span className="block text-xs text-slate-400 lg:text-sm">GitHub</span>
+                      <span className="text-sm font-bold text-white lg:text-base">Alvarez-J1</span>
                     </span>
                     
                   </a>
@@ -1080,14 +1080,14 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     href="https://www.linkedin.com/in/joel-alvarez-software-engineer/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/20 p-4 transition hover:border-cyanline/40 hover:bg-white/10"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#0a66c2] text-white">
-                      <LinkedInIcon size={23} />
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0a66c2] text-white lg:h-12 lg:w-12 lg:rounded-2xl">
+                      <LinkedInIcon size={20} />
                     </span>
                     <span>
-                      <span className="block text-sm text-slate-400">LinkedIn</span>
-                      <span className="font-bold text-white">Joel Alvarez</span>
+                      <span className="block text-xs text-slate-400 lg:text-sm">LinkedIn</span>
+                      <span className="text-sm font-bold text-white lg:text-base">Joel Alvarez</span>
                     </span>
                     
                   </a>
@@ -1095,7 +1095,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               </div>
             </motion.div>
             <motion.form
-              className="border-t border-white/10 bg-white/[0.035] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12"
+              className="border-t border-white/10 bg-white/[0.035] p-5 sm:p-7 lg:border-l lg:border-t-0 lg:p-12"
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -1103,42 +1103,42 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               onSubmit={handleSubmit}
               
             >
-              <label className="mb-5 block">
+              <label className="mb-4 block lg:mb-5">
                 <span className="mb-2 block text-sm font-bold text-white">Your Name</span>
                 <input
-                  className="w-full rounded-2xl border border-white/10 bg-ink/70 px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10"
+                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Jane Tyler"
                   type="text"
                   name="name"
                 />
               </label>
-              <label className="mb-5 block">
+              <label className="mb-4 block lg:mb-5">
                 <span className="mb-2 block text-sm font-bold text-white">
                   Email Address
                 </span>
                 <input
-                  className="w-full rounded-2xl border border-white/10 bg-ink/70 px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10"
+                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Jane@company.com"
                   type="email"
                   name="email"
                 />
               </label>
-              <label className="mb-6 block">
+              <label className="mb-5 block lg:mb-6">
                 <span className="mb-2 block text-sm font-bold text-white">Message</span>
                 <textarea
-                  className="min-h-40 w-full resize-none rounded-2xl border border-white/10 bg-ink/70 px-4 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10"
+                  className="min-h-28 w-full resize-none rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 sm:min-h-32 lg:min-h-40 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Tell me about the role, team, or project..."
                   name="message"
                 />
               </label>
               {sent && (
-                <p className="mb-5 rounded-2xl border border-green-500/30 bg-green-500/10 px-4 py-4 font-semibold text-green-400">
+                <p className="mb-4 rounded-xl border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm font-semibold text-green-400 lg:mb-5 lg:rounded-2xl lg:py-4 lg:text-base">
                   Message sent successfully! I&apos;ll get back to you soon.
                 </p>
               )}
               <motion.button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-electric px-6 py-4 text-base font-black text-white shadow-aura transition hover:bg-[#39a2ff]"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-electric px-5 py-3 text-sm font-black text-white shadow-aura transition hover:bg-[#39a2ff] lg:rounded-2xl lg:px-6 lg:py-4 lg:text-base"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
