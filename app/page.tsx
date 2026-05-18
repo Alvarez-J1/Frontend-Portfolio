@@ -323,36 +323,29 @@ const projects = [
     ],
   },
   {
-    name: "WeatherFit",
-    type: "Weather Clothing App",
+    name: "Elevate",
+    type: "Premium Ecommerce Storefront",
     summary:
-      "WeatherFit is a weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
+      "Elevate is a responsive front-end ecommerce storefront built with Next.js, React, TypeScript, and Tailwind CSS. The project focuses on modern ecommerce UI design, responsive layouts, product-focused interfaces, cart functionality, and a polished checkout experience.",
     stack: [
       "React",
-      "JavaScript ES6+",
-      "HTML5",
-      "CSS3",
-      "Node.js",
-      "Express.js v4.21.2",
-      "MongoDB",
-      "Mongoose",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
     ],
-    accent: "from-cyan-300 to-emerald-300",
-    screenshot: "/WTWR.png",
-    screenshotAlt: "WTWR weather wardrobe app preview",
+    accent: "from-blue-500 to-cyan-300",
+    screenshot: "/elevate.png",
+    screenshotAlt: "Elevate screenshot",
     actions: [
       {
         label: "Live Demo",
-        href: "https://weatherfit-app.onrender.com/",
+        href: "https://elevate-storefront.vercel.app/",
         primary: true,
       },
       {
-        label: "Frontend Repo",
-        href: "https://github.com/Alvarez-J1/se_project_react",
-      },
-      {
-        label: "Backend Repo",
-        href: "https://github.com/Alvarez-J1/se_project_express",
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/Elevate",
       },
     ],
   },
@@ -382,10 +375,44 @@ const projects = [
     ],
   },
   {
+    name: "WeatherFit",
+    type: "Weather Clothing App",
+    summary:
+      "WeatherFit is a Full-stack weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
+    stack: [
+      "React",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "Express.js v4.21.2",
+      "MongoDB",
+      "Mongoose",
+    ],
+    accent: "from-cyan-300 to-emerald-300",
+    screenshot: "/WTWR.png",
+    screenshotAlt: "WTWR weather wardrobe app preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://weatherfit-app.onrender.com/",
+        primary: true,
+      },
+      {
+        label: "Frontend Repo",
+        href: "https://github.com/Alvarez-J1/se_project_react",
+      },
+      {
+        label: "Backend Repo",
+        href: "https://github.com/Alvarez-J1/se_project_express",
+      },
+    ],
+  },
+  {
     name: "NewsExplorer",
     type: "Search Platform",
     summary:
-      "A modern news search product with saved articles, keyword context, and a calm reading-first interface.",
+      "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
     stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
     accent: "from-indigo-400 to-blue-400",
     screenshot: "/news.png",
@@ -734,7 +761,7 @@ function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="text-balance text-4xl font-black leading-[0.98] text-white sm:text-5xl lg:text-6xl 2xl:text-7xl">
-            Front-end Developer 
+            Front-end Software Engineer 
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300 sm:text-xl">
            I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
@@ -774,7 +801,7 @@ function Hero() {
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="block text-cyanline">Next.js + TypeScript</span>
+            <span className="block text-cyanline">Next.js + JavaScript</span>
             Production-minded UI
           </motion.div>
           <motion.div
@@ -1167,7 +1194,7 @@ export default function Home() {
           <p>© 2026 Joel Alvarez</p>
           <div className="flex items-center gap-2 text-slate-400">
             <BriefcaseBusiness size={16} />
-            Frontend Developer
+            Front-end Software Engineer
           </div>
         </div>
       </footer>
