@@ -415,7 +415,7 @@ const projects = [
       "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
     stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
     accent: "from-indigo-400 to-blue-400",
-    screenshot: "/news.png",
+    screenshot: "/newsE.png",
     screenshotAlt: "NewsExplorer article search app preview",
     actions: [
       {
