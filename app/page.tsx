@@ -390,7 +390,7 @@ const projects = [
       "Mongoose",
     ],
     accent: "from-cyan-300 to-emerald-300",
-    screenshot: "/WTWR.png",
+    screenshot: "/weatherfit.png",
     screenshotAlt: "WTWR weather wardrobe app preview",
     actions: [
       {
