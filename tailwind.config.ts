@@ -12,19 +12,27 @@ const config: Config = {
         graphite: "#0b1118",
         steel: "#111c27",
         frost: "#d9ecff",
-        electric: "#1688ff",
-        cyanline: "#5ed5ff",
+        electric: "#72f0bd",
+        cyanline: "#f2c66d",
       },
       boxShadow: {
-        aura: "0 0 80px rgba(22, 136, 255, 0.28)",
+        aura: "0 0 70px rgba(114, 240, 189, 0.24)",
         glass: "0 24px 90px rgba(0, 0, 0, 0.38)",
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Aptos", "Inter", "Segoe UI", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: [
+          "Aptos Display",
+          "Segoe UI Variable Display",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       backgroundImage: {
         "radial-grid":
-          "radial-gradient(circle at 1px 1px, rgba(148, 198, 255, 0.18) 1px, transparent 0)",
+          "radial-gradient(circle at 1px 1px, rgba(114, 240, 189, 0.18) 1px, transparent 0)",
       },
     },
   },

@@ -282,12 +282,12 @@ const socialLinks = [
   {
     label: "GitHub",
     href: "https://github.com/Alvarez-J1",
-    icon: <GithubIcon size={18} />,
+    icon: <GithubIcon size={21} />,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/joel-alvarez-software-engineer",
-    icon: <LinkedInIcon size={18} />,
+    icon: <LinkedInIcon size={21} />,
   },
 ];
 
@@ -307,7 +307,7 @@ const projects = [
       "Sass/SCSS",
       "NextAuth",
     ],
-    accent: "from-blue-500 to-cyan-300",
+    accent: "from-emerald-300 to-amber-200",
     screenshot: "/datara-dashboard.png",
     screenshotAlt: "Datara sales analytics dashboard screenshot",
     actions: [
@@ -324,7 +324,7 @@ const projects = [
   },
   {
     name: "Elevate",
-    type: "Premium Ecommerce Storefront",
+    type: "Electronics E-commerce Storefront",
     summary:
       "Elevate is a responsive front-end ecommerce storefront built with Next.js, React, TypeScript, and Tailwind CSS. The project focuses on modern ecommerce UI design, responsive layouts, product-focused interfaces, cart functionality, and a polished checkout experience.",
     stack: [
@@ -334,7 +334,7 @@ const projects = [
       "Tailwind CSS",
       "Framer Motion",
     ],
-    accent: "from-blue-500 to-cyan-300",
+    accent: "from-amber-200 to-emerald-300",
     screenshot: "/elevate.png",
     screenshotAlt: "Elevate screenshot",
     actions: [
@@ -359,7 +359,7 @@ const projects = [
       "HTML5",
       "CSS3",
     ],
-    accent: "from-cyan-300 to-emerald-300",
+    accent: "from-teal-300 to-amber-200",
     screenshot: "/codeswitch.png",
     screenshotAlt: "WTWR weather wardrobe app preview",
     actions: [
@@ -389,7 +389,7 @@ const projects = [
       "MongoDB",
       "Mongoose",
     ],
-    accent: "from-cyan-300 to-emerald-300",
+    accent: "from-emerald-300 to-teal-200",
     screenshot: "/weatherfit.png",
     screenshotAlt: "WTWR weather wardrobe app preview",
     actions: [
@@ -414,7 +414,7 @@ const projects = [
     summary:
       "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
     stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
-    accent: "from-indigo-400 to-blue-400",
+    accent: "from-amber-200 to-teal-300",
     screenshot: "/newsE.png",
     screenshotAlt: "NewsExplorer article search app preview",
     actions: [
@@ -455,14 +455,14 @@ function SectionHeading({
       variants={fadeUp}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
-      <p className="mb-5 text-3xl font-black uppercase tracking-normal text-cyanline sm:text-4xl lg:text-4xl">
+      <p className="mb-4 font-heading text-2xl font-black uppercase tracking-[0.08em] text-cyanline sm:text-3xl lg:text-4xl">
         {eyebrow}
       </p>
-      <h2 className="text-balance text-4xl font-black text-white sm:text-5xl lg:text-5xl">
+      <h2 className="text-balance font-heading text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {copy ? (
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-5xl">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
           {copy}
         </p>
       ) : null}
@@ -510,7 +510,7 @@ function AmbientBackground() {
       {particles.map((particle) => (
         <motion.span
           key={particle.id}
-          className="absolute rounded-full bg-cyanline shadow-[0_0_18px_rgba(94,213,255,0.9)]"
+          className="absolute rounded-full bg-cyanline shadow-[0_0_18px_rgba(242,198,109,0.72)]"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -546,7 +546,7 @@ function Navbar() {
             whileHover={{ y: -2, scale: 1.03 }}
           >
             <Image
-              src="/joel-alvarez-logo.png"
+              src="/joel.png"
               alt="Joel Alvarez"
               fill
               priority
@@ -569,7 +569,7 @@ function Navbar() {
         <div className="hidden items-center gap-2 md:flex lg:gap-3">
           <a
             href="#contact"
-            className="whitespace-nowrap rounded-xl bg-white px-3.5 py-2.5 text-sm font-bold text-ink transition hover:bg-cyanline hover:shadow-aura lg:rounded-2xl lg:px-5 lg:py-3 lg:text-base"
+            className="whitespace-nowrap rounded-xl bg-electric px-3.5 py-2.5 text-sm font-bold text-ink shadow-aura transition hover:bg-cyanline lg:rounded-2xl lg:px-5 lg:py-3 lg:text-base"
           >
             Let&apos;s Connect
           </a>
@@ -580,7 +580,7 @@ function Navbar() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white lg:h-11 lg:w-11 lg:rounded-2xl"
+                className="grid h-10 w-10 place-items-center rounded-xl border border-cyanline/25 bg-white/10 text-white shadow-[0_0_22px_rgba(242,198,109,0.08)] transition hover:border-electric/60 hover:bg-electric hover:text-ink lg:h-11 lg:w-11 lg:rounded-2xl"
                 aria-label={link.label}
               >
                 {link.icon}
@@ -622,7 +622,7 @@ function Navbar() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyanline/40 hover:bg-white/10 hover:text-white"
+                  className="grid h-11 w-11 place-items-center rounded-2xl border border-cyanline/25 bg-white/10 text-white transition hover:border-electric/60 hover:bg-electric hover:text-ink"
                   aria-label={link.label}
                   onClick={() => setOpen(false)}
                 >
@@ -650,8 +650,8 @@ function AnimatedTechStack() {
   }, [prefersReducedMotion]);
 
   return (
-    <div className="mt-8 max-w-3xl">
-      <p className="text-xl font-semibold uppercase tracking-[0.18em] text-cyanline">
+    <div className="mt-8 max-w-4xl lg:mt-10">
+      <p className="font-heading text-base font-black uppercase tracking-[0.18em] text-cyanline sm:text-lg">
         Working with modern technologies
       </p>
       <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
@@ -721,7 +721,7 @@ function AnimatedTechStack() {
               <motion.span
                 className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none sm:text-xs"
                 initial={false}
-                animate={{ color: isActive ? tech.accent : "currentColor" }}
+                animate={{ color: isActive ? tech.accent : "#94a3b8" }}
                 transition={{ duration: 0.25 }}
               >
                 {tech.name}
@@ -752,24 +752,25 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-8 pt-32 sm:px-8 sm:pb-20 lg:pt-45"
+      className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-10 pt-28 sm:px-8 sm:pb-16 lg:min-h-[calc(100vh-1rem)] lg:pt-28"
     >
-      <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid w-full items-center gap-8 lg:grid-cols-[minmax(0,1.14fr)_minmax(21rem,0.78fr)] lg:gap-7 xl:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] xl:gap-8">
         <motion.div
+          className="max-w-none lg:max-w-[54rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-balance text-4xl font-black leading-[0.98] text-white sm:text-5xl lg:text-6xl 2xl:text-7xl">
+          <h1 className="text-balance font-heading text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:text-[4.8rem] xl:text-[5.25rem]">
             Front-end Software Engineer 
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-9 text-slate-300 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 lg:max-w-[52rem]">
            I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <motion.a
               href="#projects"
-              className="inline-flex items-center justify-center gap-3 rounded-2xl bg-electric px-6 py-4 text-base font-bold text-white shadow-aura transition hover:bg-[#39a2ff]"
+              className="inline-flex items-center justify-center gap-3 rounded-2xl bg-electric px-6 py-4 text-base font-black text-ink shadow-aura transition hover:bg-cyanline"
               whileHover={{ y: -3, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -778,7 +779,7 @@ function Hero() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-6 py-4 text-base font-bold text-white backdrop-blur-xl transition hover:border-cyanline/50 hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-3 rounded-2xl border border-electric/25 bg-white/10 px-6 py-4 text-base font-bold text-white backdrop-blur-xl transition hover:border-cyanline/70 hover:bg-electric/10"
               whileHover={{ y: -3, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -790,35 +791,13 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto w-full max-w-[26rem] 2xl:max-w-[28rem]"
+          className="relative mx-auto w-full max-w-[29rem] lg:mx-0 lg:justify-self-end xl:max-w-[31rem]"
           initial={{ opacity: 0, scale: 0.94, y: 28 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="absolute -inset-8 rounded-full bg-electric/20 blur-[90px]" />
-          <motion.div
-            className="absolute -right-3 top-12 z-10 hidden rounded-3xl border border-cyanline/20 bg-ink/80 px-5 py-4 text-sm font-semibold text-white shadow-glass backdrop-blur-2xl sm:block"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <span className="block text-cyanline">Next.js + JavaScript</span>
-            Production-minded UI
-          </motion.div>
-          <motion.div
-            className="absolute -left-5 bottom-12 z-10 rounded-3xl border border-white/20 bg-ink/70 px-5 py-4 shadow-glass backdrop-blur-2xl"
-            animate={{ y: [0, 14, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-electric/20 text-cyanline">
-                <Zap size={21} />
-              </span>
-              <div>
-                <p className="font-bold text-white">Responsive UI</p>
-                <p className="text-sm text-slate-400">Accessibility Focused</p>
-              </div>
-            </div>
-          </motion.div>
+
           <div className="animated-border rounded-[2rem] p-px">
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-glass backdrop-blur-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-electric/10" />
@@ -830,16 +809,6 @@ function Hero() {
                 priority
                 className="relative aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top grayscale-[15%]"
               />
-              <div className="absolute bottom-4 left-4 right-4 rounded-[1.25rem] border border-white/10 bg-ink/70 p-4 backdrop-blur-2xl">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm text-slate-400">Now building</p>
-                  </div>
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-electric text-white">
-                    <MonitorSmartphone size={21} />
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </motion.div>
@@ -859,9 +828,9 @@ function ProjectScreenshot({
   src: string;
 }) {
   return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a1018]">
+    <div className="relative aspect-[16/10] overflow-hidden bg-[#0a1018]">
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-[0.12]`}
+        className={`absolute inset-0 z-10 bg-gradient-to-br ${accent} opacity-[0.12]`}
       />
       <Image
         src={src}
@@ -870,8 +839,7 @@ function ProjectScreenshot({
         sizes="(min-width: 1024px) 50vw, 100vw"
         className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
       />
-      
-      </div>
+    </div>
   
   );
 }
@@ -916,8 +884,8 @@ function ProjectAction({
   primary?: boolean;
 }) {
   const className = primary
-    ? "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-electric px-4 py-3 text-sm font-bold text-white transition hover:bg-[#39a2ff]"
-    : "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-[#141c28] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#1a2433]";
+    ? "inline-flex min-w-0 flex-1 items-center justify-center gap-2 bg-electric px-4 py-3.5 text-base font-black text-ink transition hover:bg-cyanline"
+    : "inline-flex min-w-0 flex-1 items-center justify-center gap-2 bg-white/[0.055] px-4 py-3.5 text-base font-bold text-white transition hover:bg-white/[0.1] hover:text-electric";
 
   if (!href) {
     return (
@@ -943,7 +911,7 @@ function ProjectAction({
 
 function Projects() {
   return (
-    <section id="projects" className="px-5 pb-8 pt-12 sm:px-8 sm:py-24">
+    <section id="projects" className="px-5 pb-10 pt-12 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Featured Projects"
@@ -953,7 +921,7 @@ function Projects() {
           {projects.map((project, index) => (
             <motion.article
               key={project.name}
-              className="group project-card flex h-full flex-col overflow-hidden rounded-2xl p-5 sm:p-6"
+              className="group project-card flex h-full flex-col overflow-hidden rounded-3xl"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -965,35 +933,37 @@ function Projects() {
                 alt={project.screenshotAlt}
                 src={project.screenshot}
               />
-              <div className="flex flex-1 flex-col pt-5 sm:pt-6">
-                <div className="mb-3 flex items-start justify-between gap-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyanline">
-                    {project.type}
-                  </p>
-                  <span
-                    className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br ${project.accent} shadow-[0_0_12px_rgba(94,213,255,0.5)]`}
-                  />
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className="font-heading text-sm font-black uppercase tracking-[0.2em] text-cyanline">
+                      {project.type}
+                    </p>
+                    <h3 className="mt-3 font-heading text-3xl font-black leading-tight text-white">
+                      {project.name}
+                    </h3>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-white/10 bg-white/10 px-3.5 py-1.5 font-heading text-sm font-black text-cyanline">
+                    0{index + 1}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white sm:text-2xl">
-                  {project.name}
-                </h3>
-                <p className="mt-4 flex-1 leading-7 text-slate-300">
+                <p className="flex-1 text-lg leading-8 text-slate-300">
                   {project.summary}
                 </p>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <p className="mt-7 font-heading text-sm font-black uppercase tracking-[0.2em] text-cyanline">
                   Tech Stack
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/[0.08] bg-[#141c28] px-3 py-1.5 text-xs font-medium text-slate-200"
+                      className="rounded-full border border-white/[0.08] bg-white/[0.045] px-4 py-2 text-sm font-semibold text-slate-200"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
-                <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                <div className="mt-6 flex flex-col gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] p-px sm:flex-row">
                   {project.actions.map((action) => (
                     <ProjectAction
                       key={action.label}
@@ -1060,7 +1030,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyanline sm:text-base lg:text-lg">
                   Contact
                 </p>
-                <h2 className="text-balance text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+                <h2 className="text-balance font-heading text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
                   Let&apos;s Connect!
                 </h2>
                 <p className="mt-4 text-base leading-7 text-slate-300 lg:mt-6 lg:text-lg lg:leading-8">
@@ -1069,7 +1039,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 <div className="mt-6 grid gap-3 lg:mt-10 lg:gap-4">
                   <a
                     href="mailto:jge4991@gmail.com"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-12 lg:w-12 lg:rounded-2xl">
                       <Mail size={19} />
@@ -1092,7 +1062,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     href="https://github.com/Alvarez-J1"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-ink lg:h-12 lg:w-12 lg:rounded-2xl">
                       <GithubIcon size={20} />
@@ -1107,7 +1077,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     href="https://www.linkedin.com/in/joel-alvarez-software-engineer/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-cyanline/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-4 lg:rounded-2xl lg:p-4"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0a66c2] text-white lg:h-12 lg:w-12 lg:rounded-2xl">
                       <LinkedInIcon size={20} />
@@ -1130,10 +1100,21 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               onSubmit={handleSubmit}
               
             >
+              <div className="mb-8 flex justify-center lg:mb-10">
+                <div className="w-full max-w-[12rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink/60 p-2 shadow-glass sm:max-w-[14rem] lg:max-w-[15.5rem]">
+                  <Image
+                    src="/park.png"
+                    alt="Joel Alvarez profile"
+                    width={700}
+                    height={700}
+                    className="aspect-[4/5] w-full rounded-[1.1rem] object-cover object-top grayscale-[15%]"
+                  />
+                </div>
+              </div>
               <label className="mb-4 block lg:mb-5">
                 <span className="mb-2 block text-sm font-bold text-white">Your Name</span>
                 <input
-                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 lg:rounded-2xl lg:py-4 lg:text-base"
+                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-electric/60 focus:ring-4 focus:ring-electric/10 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Jane Tyler"
                   type="text"
                   name="name"
@@ -1144,7 +1125,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   Email Address
                 </span>
                 <input
-                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 lg:rounded-2xl lg:py-4 lg:text-base"
+                  className="w-full rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-electric/60 focus:ring-4 focus:ring-electric/10 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Jane@company.com"
                   type="email"
                   name="email"
@@ -1153,7 +1134,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               <label className="mb-5 block lg:mb-6">
                 <span className="mb-2 block text-sm font-bold text-white">Message</span>
                 <textarea
-                  className="min-h-28 w-full resize-none rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyanline/60 focus:ring-4 focus:ring-cyanline/10 sm:min-h-32 lg:min-h-40 lg:rounded-2xl lg:py-4 lg:text-base"
+                  className="min-h-28 w-full resize-none rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-electric/60 focus:ring-4 focus:ring-electric/10 sm:min-h-32 lg:min-h-40 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Tell me about the role, team, or project..."
                   name="message"
                 />
@@ -1165,7 +1146,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               )}
               <motion.button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-electric px-5 py-3 text-sm font-black text-white shadow-aura transition hover:bg-[#39a2ff] lg:rounded-2xl lg:px-6 lg:py-4 lg:text-base"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-electric px-5 py-3 text-sm font-black text-ink shadow-aura transition hover:bg-cyanline lg:rounded-2xl lg:px-6 lg:py-4 lg:text-base"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
