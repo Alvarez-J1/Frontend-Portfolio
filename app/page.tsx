@@ -754,14 +754,14 @@ function Hero() {
       id="home"
       className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-10 pt-28 sm:px-8 sm:pb-16 lg:min-h-[calc(100vh-1rem)] lg:pt-28"
     >
-      <div className="grid w-full items-center gap-8 lg:grid-cols-[minmax(0,1.14fr)_minmax(21rem,0.78fr)] lg:gap-7 xl:grid-cols-[minmax(0,1.08fr)_minmax(24rem,0.72fr)] xl:gap-8">
+      <div className="grid w-full items-center gap-8 lg:grid-cols-[minmax(0,1.18fr)_minmax(21rem,0.78fr)] lg:gap-6 xl:grid-cols-[minmax(0,1.12fr)_minmax(24rem,0.72fr)] xl:gap-7">
         <motion.div
           className="max-w-none lg:max-w-[54rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-balance font-heading text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:text-[4.8rem] xl:text-[5.25rem]">
+          <h1 className="max-w-[52rem] font-heading text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:text-[4.7rem] xl:text-[5.15rem]">
             Front-end Software Engineer 
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 lg:max-w-[52rem]">
