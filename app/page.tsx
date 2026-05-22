@@ -820,19 +820,14 @@ function Hero() {
 
 
 function ProjectScreenshot({
-  accent,
   alt,
   src,
 }: {
-  accent: string;
   alt: string;
   src: string;
 }) {
   return (
     <div className="relative aspect-[16/10] overflow-hidden bg-[#0a1018]">
-      <div
-        className={`absolute inset-0 z-10 bg-gradient-to-br ${accent} opacity-[0.12]`}
-      />
       <Image
         src={src}
         alt={alt}
@@ -930,7 +925,6 @@ function Projects() {
               whileHover={{ y: -6 }}
             >
               <ProjectScreenshot
-                accent={project.accent}
                 alt={project.screenshotAlt}
                 src={project.screenshot}
               />
