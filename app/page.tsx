@@ -761,8 +761,9 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="max-w-[56rem] font-heading text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:max-w-[58rem] lg:text-[4.65rem] xl:text-[5.1rem]">
-            Front-end Software Engineer 
+          <h1 className="max-w-[60rem] font-heading text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:max-w-none lg:text-[4rem] xl:text-[4.85rem]">
+            <span className="block">Front-end</span>
+            <span className="block">Software Engineer</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 lg:max-w-[52rem]">
            I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
