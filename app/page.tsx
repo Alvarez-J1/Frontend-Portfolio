@@ -804,7 +804,7 @@ function Hero() {
     >
       <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.08fr)_minmax(13.5rem,0.72fr)] min-[680px]:items-start min-[680px]:gap-x-4 min-[680px]:gap-y-0 md:gap-x-5 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-center lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
         <motion.div
-          className="order-2 min-w-0 max-w-none min-[680px]:order-none min-[680px]:col-start-1 min-[680px]:row-start-1 lg:max-w-[58rem]"
+          className="order-2 min-w-0 max-w-none min-[680px]:order-none min-[680px]:col-start-1 min-[680px]:row-start-1 min-[680px]:pt-4 lg:max-w-[58rem] lg:pt-6 xl:pt-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
