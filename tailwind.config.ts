@@ -10,13 +10,13 @@ const config: Config = {
       colors: {
         ink: "#05080d",
         graphite: "#0b1118",
-        steel: "#111c27",
-        frost: "#d9ecff",
-        electric: "#72f0bd",
-        cyanline: "#f2c66d",
+        steel: "#111c22",
+        frost: "#e8f1ee",
+        electric: "#6ee7c8",
+        cyanline: "#9ac7bd",
       },
       boxShadow: {
-        aura: "0 0 70px rgba(114, 240, 189, 0.24)",
+        aura: "0 0 46px rgba(110, 231, 200, 0.18)",
         glass: "0 24px 90px rgba(0, 0, 0, 0.38)",
       },
       fontFamily: {
@@ -32,7 +32,7 @@ const config: Config = {
       },
       backgroundImage: {
         "radial-grid":
-          "radial-gradient(circle at 1px 1px, rgba(114, 240, 189, 0.18) 1px, transparent 0)",
+          "radial-gradient(circle at 1px 1px, rgba(110, 231, 200, 0.12) 1px, transparent 0)",
       },
     },
   },

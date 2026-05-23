@@ -7,9 +7,9 @@
       <stop offset="1" stop-color="#020712"/>
     </linearGradient>
     <linearGradient id="mark" x1="10" y1="48" x2="55" y2="13" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f2c66d"/>
-      <stop offset=".45" stop-color="#72f0bd"/>
-      <stop offset="1" stop-color="#34d399"/>
+      <stop stop-color="#9ac7bd"/>
+      <stop offset=".45" stop-color="#6ee7c8"/>
+      <stop offset="1" stop-color="#5fd3bd"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
@@ -25,7 +25,7 @@
   <path
     d="M12 50c9-5.5 19.5-8.2 31.7-7.7"
     fill="none"
-    stroke="#f2c66d"
+    stroke="#9ac7bd"
     stroke-linecap="round"
     stroke-width="2.6"
     opacity=".9"
