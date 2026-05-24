@@ -416,7 +416,7 @@ const projects = [
         primary: true,
       },
       {
-        label: "Github Repo",
+        label: "GitHub Repo",
         href: "https://github.com/Alvarez-J1/Code-Switcher",
       },
     ],
@@ -446,7 +446,7 @@ const projects = [
         primary: true,
       },
       {
-        label: "Github Repo",
+        label: "GitHub Repo",
         href: "https://github.com/Alvarez-J1/se_project_react",
       },
     ],
