@@ -355,7 +355,7 @@ const projects = [
       "NextAuth",
     ],
     accent: "from-teal-300 to-slate-400",
-    screenshot: "/datara-dashboard.png",
+    screenshot: "/datara.png",
     screenshotAlt: "Datara sales analytics dashboard screenshot",
     actions: [
       {
