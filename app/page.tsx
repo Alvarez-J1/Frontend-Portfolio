@@ -800,20 +800,20 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-5 lg:min-h-[calc(100vh-1rem)] lg:max-w-7xl lg:px-8 lg:pt-28"
+      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:min-h-[calc(100vh-1rem)] lg:max-w-7xl lg:px-8 lg:pt-28"
     >
-      <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.08fr)_minmax(13.5rem,0.72fr)] min-[680px]:items-start min-[680px]:gap-x-4 min-[680px]:gap-y-0 md:gap-x-5 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-center lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
+      <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.22fr)_minmax(12.25rem,0.68fr)] min-[680px]:items-start min-[680px]:gap-x-5 min-[680px]:gap-y-0 md:grid-cols-[minmax(0,1.28fr)_minmax(13.5rem,0.72fr)] md:gap-x-6 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-center lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
         <motion.div
           className="order-2 min-w-0 max-w-none min-[680px]:order-none min-[680px]:col-start-1 min-[680px]:row-start-1 min-[680px]:pt-4 lg:max-w-[58rem] lg:pt-6 xl:pt-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="max-w-[60rem] font-heading text-5xl font-black leading-[0.94] text-frost sm:text-6xl min-[680px]:text-[3rem] md:text-[3.25rem] lg:max-w-none lg:text-[4rem] xl:text-[4.85rem]">
+          <h1 className="max-w-[60rem] font-heading text-5xl font-black leading-[0.94] text-frost sm:text-6xl min-[680px]:text-[clamp(2.65rem,6.25vw,3rem)] min-[912px]:text-[3.25rem] lg:max-w-none lg:text-[4rem] xl:text-[4.85rem]">
             <span className="block">Front-end</span>
             <span className="block">Software Engineer</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 min-[680px]:text-base min-[680px]:leading-7 md:text-lg md:leading-8 lg:max-w-[52rem] lg:text-xl lg:leading-9">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 min-[680px]:max-w-none min-[680px]:text-base min-[680px]:leading-7 md:text-lg md:leading-8 lg:max-w-[52rem] lg:text-xl lg:leading-9">
            I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -839,7 +839,7 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          className="order-1 relative mx-auto w-full max-w-[24rem] min-[680px]:order-none min-[680px]:col-start-2 min-[680px]:row-span-2 min-[680px]:row-start-1 min-[680px]:mx-0 min-[680px]:max-w-[clamp(13.5rem,35vw,22rem)] min-[680px]:justify-self-end lg:max-w-[29rem] xl:max-w-[31rem]"
+          className="order-1 relative mx-auto w-full max-w-[24rem] min-[680px]:order-none min-[680px]:col-start-2 min-[680px]:row-span-2 min-[680px]:row-start-1 min-[680px]:mx-0 min-[680px]:max-w-[clamp(12rem,31vw,20rem)] min-[680px]:justify-self-end md:max-w-[clamp(13rem,32vw,22rem)] lg:max-w-[29rem] xl:max-w-[31rem]"
           initial={{ scale: 0.94, y: 28 }}
           animate={{ scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
