@@ -341,6 +341,36 @@ const socialLinks = [
 
 const projects = [
   {
+    name: "WeatherFit",
+    type: "Weather Clothing App",
+    summary:
+      "WeatherFit is a Full-Stack weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
+    stack: [
+      "React",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "Express.js v4.21.2",
+      "MongoDB",
+      "Mongoose",
+    ],
+    accent: "from-emerald-300 to-teal-200",
+    screenshot: "/weatherfit.png",
+    screenshotAlt: "WTWR weather wardrobe app preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://weatherfit-app.onrender.com/",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/se_project_react",
+      },
+    ],
+  },
+  {
     name: "Datara",
     type: "Sales Analytics Dashboard",
     summary:
@@ -396,6 +426,27 @@ const projects = [
       },
     ],
   },
+  {
+    name: "NewsExplorer",
+    type: "Search Platform",
+    summary:
+      "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
+    stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
+    accent: "from-slate-300 to-teal-300",
+    screenshot: "/newsE.png",
+    screenshotAlt: "NewsExplorer article search app preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://news-explorer-ten.vercel.app/",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/news-explorer-frontend",
+      },
+    ],
+  },
    {
     name: "Code Switcher",
     type: "Marketing Website",
@@ -421,57 +472,8 @@ const projects = [
       },
     ],
   },
-  {
-    name: "WeatherFit",
-    type: "Weather Clothing App",
-    summary:
-      "WeatherFit is a Full-stack weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
-    stack: [
-      "React",
-      "JavaScript ES6+",
-      "HTML5",
-      "CSS3",
-      "Node.js",
-      "Express.js v4.21.2",
-      "MongoDB",
-      "Mongoose",
-    ],
-    accent: "from-emerald-300 to-teal-200",
-    screenshot: "/weatherfit.png",
-    screenshotAlt: "WTWR weather wardrobe app preview",
-    actions: [
-      {
-        label: "Live Demo",
-        href: "https://weatherfit-app.onrender.com/",
-        primary: true,
-      },
-      {
-        label: "GitHub Repo",
-        href: "https://github.com/Alvarez-J1/se_project_react",
-      },
-    ],
-  },
-  {
-    name: "NewsExplorer",
-    type: "Search Platform",
-    summary:
-      "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
-    stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
-    accent: "from-slate-300 to-teal-300",
-    screenshot: "/newsE.png",
-    screenshotAlt: "NewsExplorer article search app preview",
-    actions: [
-      {
-        label: "Live Demo",
-        href: "https://news-explorer-ten.vercel.app/",
-        primary: true,
-      },
-      {
-        label: "GitHub Repo",
-        href: "https://github.com/Alvarez-J1/news-explorer-frontend",
-      },
-    ],
-  },
+  
+  
 ];
 
 
@@ -617,14 +619,14 @@ function Navbar() {
           >
             Let&apos;s Connect
           </a>
-          <div className="flex shrink-0 items-center gap-1.5 lg:gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 lg:gap-2 min-[1600px]:gap-2.5 min-[1920px]:gap-3">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="grid h-9 w-9 place-items-center rounded-xl border border-cyanline/20 bg-white/10 text-frost shadow-[0_0_20px_rgba(110,231,200,0.08)] transition hover:border-electric/50 hover:bg-electric hover:text-ink lg:h-11 lg:w-11 lg:rounded-2xl"
+                className="grid h-9 w-9 place-items-center rounded-xl border border-cyanline/20 bg-white/10 text-frost shadow-[0_0_20px_rgba(110,231,200,0.08)] transition hover:border-electric/50 hover:bg-electric hover:text-ink lg:h-11 lg:w-11 lg:rounded-2xl min-[1600px]:h-[3.25rem] min-[1600px]:w-[3.25rem] min-[1600px]:rounded-[1.25rem] min-[1600px]:[&_svg]:h-7 min-[1600px]:[&_svg]:w-7 min-[1920px]:h-14 min-[1920px]:w-14 min-[1920px]:[&_svg]:h-[1.875rem] min-[1920px]:[&_svg]:w-[1.875rem]"
                 aria-label={link.label}
               >
                 {link.icon}
@@ -800,9 +802,9 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:min-h-[calc(100vh-1rem)] lg:max-w-7xl lg:px-8 lg:pt-28"
+      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:min-h-0 lg:max-w-7xl lg:items-start lg:px-8 lg:pb-8 lg:pt-32 min-[1440px]:pt-40 2xl:pt-44"
     >
-      <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.22fr)_minmax(12.25rem,0.68fr)] min-[680px]:items-start min-[680px]:gap-x-5 min-[680px]:gap-y-0 md:grid-cols-[minmax(0,1.28fr)_minmax(13.5rem,0.72fr)] md:gap-x-6 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-center lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
+      <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.22fr)_minmax(12.25rem,0.68fr)] min-[680px]:items-start min-[680px]:gap-x-5 min-[680px]:gap-y-0 md:grid-cols-[minmax(0,1.28fr)_minmax(13.5rem,0.72fr)] md:gap-x-6 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-start lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
         <motion.div
           className="order-2 min-w-0 max-w-none min-[680px]:order-none min-[680px]:col-start-1 min-[680px]:row-start-1 min-[680px]:pt-4 lg:max-w-[58rem] lg:pt-6 xl:pt-8"
           initial={{ opacity: 0, y: 30 }}
@@ -810,11 +812,11 @@ function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="max-w-[60rem] font-heading text-5xl font-black leading-[0.94] text-frost sm:text-6xl min-[680px]:text-[clamp(2.65rem,6.25vw,3rem)] min-[912px]:text-[3.25rem] lg:max-w-none lg:text-[4rem] xl:text-[4.85rem]">
-            <span className="block">Front-end</span>
+            <span className="block">Full-Stack</span>
             <span className="block">Software Engineer</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 min-[680px]:max-w-none min-[680px]:text-base min-[680px]:leading-7 md:text-lg md:leading-8 lg:max-w-[52rem] lg:text-xl lg:leading-9">
-           I build responsive frontend applications using JavaScript, React, Next.js, and TypeScript with a focus on clean UI, accessibility, and smooth user experience.
+           I build responsive full-stack applications using JavaScript, React, Next.js, TypeScript, Node.js, Express, and MongoDB with a focus on clean UI, accessibility, and smooth user experience.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <motion.a
@@ -958,11 +960,11 @@ function ProjectAction({
 
 function Projects() {
   return (
-    <section id="projects" className="px-5 pb-10 pt-12 sm:px-8 sm:py-24">
+    <section id="projects" className="px-5 pb-10 pt-12 sm:px-8 sm:py-24 lg:pb-24 lg:pt-16">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Featured Projects"
-          title="Frontend projects focused on clean UI & responsiveness."
+          title="Projects focused on clean UI & responsiveness."
         />
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:gap-6 lg:auto-rows-fr lg:grid-cols-2 lg:gap-8">
           {projects.map((project, index) => {
@@ -1222,7 +1224,7 @@ export default function Home() {
           <p>© 2026 Joel Alvarez</p>
           <div className="flex items-center gap-2 text-slate-400">
             <BriefcaseBusiness size={16} />
-            Front-end Software Engineer
+            Full-Stack Software Engineer
           </div>
         </div>
       </footer>
