@@ -841,7 +841,7 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          className="order-1 relative mx-auto w-full max-w-[24rem] min-[680px]:order-none min-[680px]:col-start-2 min-[680px]:row-span-2 min-[680px]:row-start-1 min-[680px]:mx-0 min-[680px]:max-w-[clamp(12rem,31vw,20rem)] min-[680px]:justify-self-end md:max-w-[clamp(13rem,32vw,22rem)] lg:max-w-[29rem] xl:max-w-[31rem]"
+          className="order-1 relative mx-auto w-full max-w-[19rem] sm:max-w-[21rem] min-[680px]:order-none min-[680px]:col-start-2 min-[680px]:row-span-2 min-[680px]:row-start-1 min-[680px]:mx-0 min-[680px]:max-w-[clamp(12rem,31vw,20rem)] min-[680px]:justify-self-end md:max-w-[clamp(13rem,32vw,22rem)] lg:max-w-[29rem] xl:max-w-[31rem]"
           initial={{ scale: 0.94, y: 28 }}
           animate={{ scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
