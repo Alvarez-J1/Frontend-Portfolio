@@ -195,40 +195,42 @@ const heroTechnologies = [
     ),
   },
   {
-    name: "Sass",
-    accent: "#CC6699",
+    name: "Tailwind CSS",
+    accent: "#38BDF8",
     icon: (
-      <TechLogoSvg className="size-10">
-        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
-          <circle cx="12" cy="12" r="10.2" fill="#cc6699" />
-          <text
-            x="12"
-            y="15.8"
-            textAnchor="middle"
-            fontFamily="Arial, sans-serif"
-            fontSize="10.2"
-            fontWeight="800"
-            fill="#fff"
-          >
-            S
-          </text>
+      <TechLogoSvg className="h-9 w-11">
+        <svg viewBox="0 0 48 29" className={techIconClass} aria-hidden>
+          <path
+            fill="#38bdf8"
+            d="M24 0C17.6 0 13.6 3.2 12 9.6c2.4-3.2 5.2-4.4 8.4-3.6 1.8.45 3.09 1.76 4.52 3.2 2.33 2.35 5.02 5.05 11.08 5.05 6.4 0 10.4-3.2 12-9.6-2.4 3.2-5.2 4.4-8.4 3.6-1.8-.45-3.09-1.76-4.52-3.2C32.75 2.7 30.06 0 24 0ZM12 14.25c-6.4 0-10.4 3.2-12 9.6 2.4-3.2 5.2-4.4 8.4-3.6 1.8.45 3.09 1.76 4.52 3.2 2.33 2.35 5.02 5.05 11.08 5.05 6.4 0 10.4-3.2 12-9.6-2.4 3.2-5.2 4.4-8.4 3.6-1.8-.45-3.09-1.76-4.52-3.2-2.33-2.35-5.02-5.05-11.08-5.05Z"
+          />
         </svg>
       </TechLogoSvg>
     ),
   },
   {
-    name: "Material UI",
+    name: "Sass",
+    accent: "#CC6699",
+    icon: (
+      <TechLogoSvg className="size-10">
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#CC6699"
+            d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM9.615 15.998c.175.645.156 1.248-.024 1.792l-.065.18c-.024.061-.052.12-.078.176-.14.29-.326.56-.555.81-.698.759-1.672 1.047-2.09.805-.45-.262-.226-1.335.584-2.19.871-.918 2.12-1.509 2.12-1.509v-.003l.108-.061zm9.911-10.861c-.542-2.133-4.077-2.834-7.422-1.645-1.989.707-4.144 1.818-5.693 3.267C4.568 8.48 4.275 9.98 4.396 10.607c.427 2.211 3.457 3.657 4.703 4.73v.006c-.367.18-3.056 1.529-3.686 2.925-.675 1.47.105 2.521.615 2.655 1.575.436 3.195-.36 4.065-1.649.84-1.261.766-2.881.404-3.676.496-.135 1.08-.195 1.83-.104 2.101.24 2.521 1.56 2.43 2.1-.09.539-.523.854-.674.944-.15.091-.195.12-.181.181.015.09.091.09.21.075.165-.03 1.096-.45 1.141-1.471.045-1.29-1.186-2.729-3.375-2.7-.9.016-1.471.091-1.875.256-.03-.045-.061-.075-.105-.105-1.35-1.455-3.855-2.475-3.75-4.41.03-.705.285-2.564 4.8-4.814 3.705-1.846 6.661-1.335 7.171-.21.733 1.604-1.576 4.59-5.431 5.024-1.47.165-2.235-.404-2.431-.615-.209-.225-.239-.24-.314-.194-.12.06-.045.255 0 .375.12.3.585.825 1.396 1.095.704.225 2.43.359 4.5-.45 2.324-.899 4.139-3.405 3.614-5.505l.073.067z"
+          />
+        </svg>
+      </TechLogoSvg>
+    ),
+  },
+  {
+    name: "MUI",
     accent: "#007FFF",
     icon: (
       <TechLogoSvg className="size-10">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
-            fill="#007fff"
-            d="M2.1 5.2 8 8.6v6.9l3.9 2.3 3.9-2.3v-4.4l2.1 1.2v4.4l4-2.3V7.5l-4 2.3v-4.6L14 7.5l-2.1-1.2L8 4.1 4 6.4 2.1 5.2Z"
-          />
-          <path
-            fill="#5ec8ff"
-            d="m8 8.6 3.9-2.3 2.1 1.2-3.9 2.3L8 8.6Zm7.8 2.5 2.1-1.3 4 2.4-4 2.3-2.1-1.2v-2.2Z"
+            fill="#007FFF"
+            d="M20.229 15.793a.666.666 0 0 0 .244-.243.666.666 0 0 0 .09-.333l.012-3.858a.666.666 0 0 1 .09-.333.666.666 0 0 1 .245-.243L23 9.58a.667.667 0 0 1 .333-.088.667.667 0 0 1 .333.09.667.667 0 0 1 .244.243.666.666 0 0 1 .089.333v7.014a.667.667 0 0 1-.335.578l-7.893 4.534a.666.666 0 0 1-.662 0l-6.194-3.542a.667.667 0 0 1-.246-.244.667.667 0 0 1-.09-.335v-3.537c0-.004.004-.006.008-.004s.008 0 .008-.005v-.004c0-.003.002-.005.004-.007l5.102-2.93c.004-.003.002-.01-.003-.01a.005.005 0 0 1-.004-.002.005.005 0 0 1-.001-.004l.01-3.467a.667.667 0 0 0-.333-.58.667.667 0 0 0-.667 0L8.912 9.799a.667.667 0 0 1-.665 0l-3.804-2.19a.667.667 0 0 0-.999.577v6.267a.667.667 0 0 1-.332.577.666.666 0 0 1-.332.09.667.667 0 0 1-.333-.088L.336 13.825a.667.667 0 0 1-.246-.244.667.667 0 0 1-.09-.336L.019 2.292a.667.667 0 0 1 .998-.577l7.23 4.153a.667.667 0 0 0 .665 0l7.228-4.153a.666.666 0 0 1 .333-.088.666.666 0 0 1 .333.09.667.667 0 0 1 .244.244.667.667 0 0 1 .088.333V13.25c0 .117-.03.232-.089.334a.667.667 0 0 1-.245.244l-3.785 2.18a.667.667 0 0 0-.245.245.666.666 0 0 0-.089.334.667.667 0 0 0 .09.334.666.666 0 0 0 .247.244l2.088 1.189a.67.67 0 0 0 .33.087.667.667 0 0 0 .332-.089l4.457-2.56Zm.438-9.828a.666.666 0 0 0 .09.335.666.666 0 0 0 .248.244.667.667 0 0 0 .67-.008l2.001-1.2a.666.666 0 0 0 .237-.243.667.667 0 0 0 .087-.329V2.32a.667.667 0 0 0-.091-.335.667.667 0 0 0-.584-.33.667.667 0 0 0-.334.094l-2 1.2a.666.666 0 0 0-.238.243.668.668 0 0 0-.086.329v2.445Z"
           />
         </svg>
       </TechLogoSvg>
@@ -297,21 +299,81 @@ const heroTechnologies = [
     accent: "#47A248",
     icon: (
       <TechLogoSvg className="h-11 w-9">
+        <svg
+          viewBox="8.738 -5.036 17.46 39.406"
+          className={techIconClass}
+          aria-hidden
+        >
+          <path
+            fill="#599636"
+            d="m15.9.087.854 1.604c.192.296.4.558.645.802a22.406 22.406 0 0 1 2.004 2.266c1.447 1.9 2.423 4.01 3.12 6.292.418 1.394.645 2.824.662 4.27.07 4.323-1.412 8.035-4.4 11.12a12.7 12.7 0 0 1-1.57 1.342c-.296 0-.436-.227-.558-.436a3.589 3.589 0 0 1-.436-1.255c-.105-.523-.174-1.046-.14-1.586v-.244c-.024-.052-.285-24.052-.181-24.175z"
+          />
+          <path
+            fill="#6CAC48"
+            d="m15.9.034c-.035-.07-.07-.017-.105.017.017.35-.105.662-.296.96-.21.296-.488.523-.767.767-1.55 1.342-2.77 2.963-3.747 4.776-1.3 2.44-1.97 5.055-2.16 7.808-.087.993.314 4.497.627 5.508.854 2.684 2.388 4.933 4.375 6.885.488.47 1.01.906 1.55 1.325.157 0 .174-.14.21-.244a4.78 4.78 0 0 0 .157-.68l.35-2.614z"
+          />
+          <path
+            fill="#C2BFBF"
+            d="M16.754 28.845c.035-.4.227-.732.436-1.063-.21-.087-.366-.26-.488-.453a3.235 3.235 0 0 1-.26-.575c-.244-.732-.296-1.5-.366-2.248v-.453c-.087.07-.105.662-.105.75a17.37 17.37 0 0 1-.314 2.353c-.052.314-.087.627-.28.906 0 .035 0 .07.017.122.314.924.4 1.865.453 2.824v.35c0 .418-.017.33.33.47.14.052.296.07.436.174.105 0 .122-.087.122-.157l-.052-.575v-1.604c-.017-.28.035-.558.07-.82z"
+          />
+        </svg>
+      </TechLogoSvg>
+    ),
+  },
+  {
+    name: "Git",
+    accent: "#F05032",
+    icon: (
+      <TechLogoSvg className="size-10">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
-            fill="#47a248"
-            d="M12 2.1c3.4 3.2 5.1 6.2 5.1 9 0 3.7-2.1 6.5-5.1 8.7-3-2.2-5.1-5-5.1-8.7 0-2.8 1.7-5.8 5.1-9Z"
+            fill="#F05032"
+            d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"
+          />
+        </svg>
+      </TechLogoSvg>
+    ),
+  },
+  {
+    name: "Vite",
+    accent: "#A855F7",
+    icon: (
+      <TechLogoSvg className="size-10">
+        <svg
+          viewBox="-1.871 -0.407 259.721 257.849"
+          className={techIconClass}
+          aria-hidden
+        >
+          <defs>
+            <linearGradient
+              id="vite-gradient-base"
+              x1="-.828%"
+              x2="57.636%"
+              y1="7.652%"
+              y2="78.411%"
+            >
+              <stop offset="0" stopColor="#41D1FF" />
+              <stop offset="1" stopColor="#BD34FE" />
+            </linearGradient>
+            <linearGradient
+              id="vite-gradient-bolt"
+              x1="43.376%"
+              x2="50.316%"
+              y1="2.242%"
+              y2="89.03%"
+            >
+              <stop offset="0" stopColor="#FFEA83" />
+              <stop offset=".083" stopColor="#FFDD35" />
+              <stop offset="1" stopColor="#FFA800" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#vite-gradient-base)"
+            d="M255.153 37.938 134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62z"
           />
           <path
-            fill="#2f6f36"
-            d="M12 2.1v17.7c3-2.2 5.1-5 5.1-8.7 0-2.8-1.7-5.8-5.1-9Z"
-            opacity=".55"
-          />
-          <path
-            d="M12 6.2v14.9"
-            stroke="#d7ffd7"
-            strokeLinecap="round"
-            strokeWidth="1.05"
+            fill="url(#vite-gradient-bolt)"
+            d="M185.432.063 96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028 72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113z"
           />
         </svg>
       </TechLogoSvg>
@@ -708,7 +770,7 @@ function AnimatedTechStack({
         {heroTechnologies.map((tech, index) => {
           const isActive = index === activeIndex;
           return (
-            <motion.button
+            <button
               key={tech.name}
               type="button"
               onClick={() => setActiveIndex(index)}
@@ -729,68 +791,17 @@ function AnimatedTechStack({
               }
               aria-label={`${tech.name} technology`}
               aria-pressed={isActive}
-              initial={false}
-              animate={
-                isActive && !prefersReducedMotion
-                  ? {
-                      y: [0, -5, 0],
-                      scale: [1, 1.035, 1],
-                      rotate: [0, -1.5, 1.5, 0],
-                    }
-                  : { y: 0, scale: 1, rotate: 0 }
-              }
-              whileHover={
-                prefersReducedMotion ? undefined : { y: -4, scale: 1.02 }
-              }
-              whileTap={{ scale: 0.98 }}
-              transition={
-                isActive && !prefersReducedMotion
-                  ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
-                  : { duration: 0.35 }
-              }
             >
-              <motion.span
-                className="pointer-events-none absolute inset-2 rounded-lg opacity-0 blur-lg"
-                style={{
-                  background: `radial-gradient(circle, ${tech.accent}24 0%, transparent 68%)`,
-                }}
-                animate={
-                  isActive && !prefersReducedMotion
-                    ? { opacity: [0.1, 0.18, 0.1], scale: [0.96, 1.04, 0.96] }
-                    : { opacity: 0, scale: 0.96 }
-                }
-                transition={
-                  isActive && !prefersReducedMotion
-                    ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
-                    : { duration: 0.25 }
-                }
-              />
               <span className="relative flex size-11 items-center justify-center">
                 {tech.icon}
               </span>
-              <motion.span
-                className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none sm:text-xs"
-                initial={false}
-                animate={{ color: isActive ? tech.accent : "#94a3b8" }}
-                transition={{ duration: 0.25 }}
+              <span
+                className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none transition-colors duration-300 sm:text-xs"
+                style={{ color: isActive ? tech.accent : undefined }}
               >
                 {tech.name}
-              </motion.span>
-              <motion.span
-                className="absolute bottom-1.5 h-1 w-1 rounded-full"
-                style={{ backgroundColor: tech.accent }}
-                initial={false}
-                animate={{
-                  opacity: isActive ? 1 : 0,
-                  scale: isActive && !prefersReducedMotion ? [0.8, 1.25, 0.8] : 1,
-                }}
-                transition={
-                  isActive && !prefersReducedMotion
-                    ? { duration: 1.2, repeat: Infinity, ease: "easeInOut" }
-                    : { duration: 0.2 }
-                }
-              />
-            </motion.button>
+              </span>
+            </button>
           );
         })}
       </div>
