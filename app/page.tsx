@@ -1031,9 +1031,9 @@ function Projects() {
                       href={action.href}
                       icon={
                         action.primary ? (
-                          <ArrowUpRight size={16} />
+                          <ArrowUpRight size={24} />
                         ) : (
-                          <GithubIcon size={16} />
+                          <GithubIcon size={26} />
                         )
                       }
                       label={action.label}
@@ -1078,9 +1078,9 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   
     <section id="contact" className="px-4 pb-14 pt-6 sm:px-6 sm:py-14 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.04fr)_minmax(26rem,0.96fr)] lg:items-start lg:gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(28rem,0.92fr)] xl:gap-6">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.04fr)_minmax(26rem,0.96fr)] lg:items-stretch lg:gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(28rem,0.92fr)] xl:gap-6">
             <motion.div
-              className="glass-panel relative overflow-hidden rounded-[1.5rem] p-5 sm:p-7 lg:rounded-[2rem] lg:p-8 xl:p-10"
+              className="glass-panel relative overflow-hidden rounded-[1.5rem] p-5 sm:p-7 lg:h-full lg:rounded-[2rem] lg:p-8 xl:p-10"
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -1153,7 +1153,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               </div>
             </motion.div>
             <motion.form
-              className="glass-panel w-full self-start rounded-[1.5rem] p-5 sm:p-6 lg:rounded-[2rem] lg:p-8 xl:p-9"
+              className="glass-panel w-full rounded-[1.5rem] p-5 sm:p-6 lg:h-full lg:rounded-[2rem] lg:p-8 xl:p-9"
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-120px" }}
