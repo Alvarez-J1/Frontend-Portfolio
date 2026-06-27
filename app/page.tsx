@@ -114,6 +114,20 @@ const heroTechnologies = [
     icon: <TechLogoImage src="/tech/javascript.svg" alt="JavaScript" />,
   },
   {
+    name: "TypeScript",
+    accent: "#3178C6",
+    icon: (
+      <TechLogoSvg className="size-10">
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <path
+            fill="#3178C6"
+            d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"
+          />
+        </svg>
+      </TechLogoSvg>
+    ),
+  },
+  {
     name: "React",
     accent: "#61DAFB",
     icon: (
@@ -159,15 +173,37 @@ const heroTechnologies = [
     icon: <NextTechLogo />,
   },
   {
-    name: "TypeScript",
-    accent: "#3178C6",
+    name: "Angular",
+    accent: "#DD0031",
     icon: (
       <TechLogoSvg className="size-10">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
-            fill="#3178C6"
-            d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"
+            fill="#DD0031"
+            d="M9.93 12.645h4.134L11.996 7.74M11.996.009L.686 4.018l1.725 14.953 9.585 5.32 9.588-5.32 1.725-14.953zm7.058 18.063h-2.636l-1.42-3.501H8.995l-1.42 3.501H4.937l7.06-15.816z"
           />
+        </svg>
+      </TechLogoSvg>
+    ),
+  },
+  {
+    name: "RxJS",
+    accent: "#E6007E",
+    icon: (
+      <TechLogoSvg className="size-10">
+        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="10"
+            ry="4"
+            fill="none"
+            stroke="#E6007E"
+            strokeWidth="1.3"
+            transform="rotate(45 12 12)"
+          />
+          <circle cx="12" cy="12" r="2.1" fill="#E6007E" />
+          <circle cx="19.07" cy="4.93" r="1.9" fill="#B3107D" />
         </svg>
       </TechLogoSvg>
     ),
@@ -406,19 +442,22 @@ const projects = [
     name: "WeatherFit",
     type: "Weather Clothing App",
     summary:
-      "WeatherFit is a Full-Stack weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
+      "WeatherFit is a full-stack weather-based clothing recommendation application. It displays the user's current location, date, and temperature, then suggests appropriate clothing items based on current weather conditions.",
     stack: [
       "React",
       "JavaScript ES6+",
       "HTML5",
       "CSS3",
       "Node.js",
-      "Express.js v4.21.2",
+      "Express.js",
       "MongoDB",
       "Mongoose",
+      "JWT",
+      "REST API",
+      "OpenWeather API"
     ],
     accent: "from-emerald-300 to-teal-200",
-    screenshot: "/weatherfit.png",
+    screenshot: "/weatherr.png",
     screenshotAlt: "WTWR weather wardrobe app preview",
     actions: [
       {
@@ -429,6 +468,37 @@ const projects = [
       {
         label: "GitHub Repo",
         href: "https://github.com/Alvarez-J1/se_project_react",
+      },
+    ],
+  },
+  {
+    name: "AgencyOS",
+    type: "AGENCY MANAGEMENT PLATFORM",
+    summary:
+      "AgencyOS is a full-stack agency management platform that helps teams manage clients, projects, and tasks from a single workspace. It features secure authentication, responsive dashboards, and complete CRUD functionality powered by a Node.js, Express, and MongoDB backend.",
+    stack: [
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "REST API",
+      "SCSS"
+    ],
+    accent: "from-emerald-300 to-teal-200",
+    screenshot: "/AgencyOS.png",
+    screenshotAlt: "AgencyOS agency management platform preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://agencyos-saas.vercel.app/login",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/agencyos",
       },
     ],
   },
@@ -472,9 +542,10 @@ const projects = [
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
+      "Zustand"
     ],
     accent: "from-teal-300 to-emerald-200",
-    screenshot: "/elevate.png",
+    screenshot: "/ele.png",
     screenshotAlt: "Elevate screenshot",
     actions: [
       {
@@ -492,8 +563,8 @@ const projects = [
     name: "NewsExplorer",
     type: "Search Platform",
     summary:
-      "NewsExplorer is a React application that lets users search for news articles by keyword and save them to their personal account.",
-    stack: ["React", "JavaScript ES6+", "HTML5", "CSS3",],
+      "NewsExplorer is a React application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated dashboard.",
+    stack: ["React", "JavaScript ES6+", "HTML5", "CSS3", "News API"],
     accent: "from-slate-300 to-teal-300",
     screenshot: "/newsE.png",
     screenshotAlt: "NewsExplorer article search app preview",
@@ -752,14 +823,15 @@ function AnimatedTechStack({
 } = {}) {
   const prefersReducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
+  const technologyCount = heroTechnologies.length;
 
   useEffect(() => {
     if (prefersReducedMotion) return;
     const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % heroTechnologies.length);
+      setActiveIndex((current) => (current + 1) % technologyCount);
     }, 2600);
     return () => clearInterval(interval);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, technologyCount]);
 
   return (
     <div className={`w-full max-w-none lg:max-w-4xl ${className}`}>
@@ -977,16 +1049,12 @@ function Projects() {
           eyebrow="Featured Projects"
           title="Projects focused on clean UI & responsiveness."
         />
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:gap-6 lg:auto-rows-fr lg:grid-cols-2 lg:gap-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">
           {projects.map((project, index) => {
-            const compactProjectCard = project.name === "NewsExplorer";
-
             return (
             <motion.article
               key={project.name}
-              className={`group project-card flex flex-col overflow-hidden rounded-3xl ${
-                compactProjectCard ? "lg:h-auto lg:self-start" : "lg:h-full"
-              }`}
+              className="group project-card flex flex-col overflow-hidden rounded-3xl lg:h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -997,11 +1065,7 @@ function Projects() {
                 alt={project.screenshotAlt}
                 src={project.screenshot}
               />
-              <div
-                className={`flex flex-col p-5 sm:p-6 lg:p-7 ${
-                  compactProjectCard ? "lg:flex-none" : "lg:flex-1"
-                }`}
-              >
+              <div className="flex flex-col p-5 sm:p-6 lg:p-7 lg:flex-1">
                 <div className="mb-4 flex items-start justify-between gap-4 lg:mb-5">
                   <div className="min-w-0">
                     <p className="font-heading text-sm font-black uppercase tracking-[0.2em] text-cyanline">
@@ -1015,11 +1079,7 @@ function Projects() {
                     0{index + 1}
                   </span>
                 </div>
-                <p
-                  className={`text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 ${
-                    compactProjectCard ? "" : "lg:flex-1"
-                  }`}
-                >
+                <p className="text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 lg:flex-1">
                   {project.summary}
                 </p>
                 <p className="mt-5 font-heading text-sm font-black uppercase tracking-[0.2em] text-cyanline lg:mt-7">
