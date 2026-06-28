@@ -189,24 +189,7 @@ const heroTechnologies = [
   {
     name: "RxJS",
     accent: "#E6007E",
-    icon: (
-      <TechLogoSvg className="size-10">
-        <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="10"
-            ry="4"
-            fill="none"
-            stroke="#E6007E"
-            strokeWidth="1.3"
-            transform="rotate(45 12 12)"
-          />
-          <circle cx="12" cy="12" r="2.1" fill="#E6007E" />
-          <circle cx="19.07" cy="4.93" r="1.9" fill="#B3107D" />
-        </svg>
-      </TechLogoSvg>
-    ),
+    icon: <TechLogoImage src="/tech/rxjs.png" alt="RxJS" />,
   },
   {
     name: "HTML",
@@ -331,6 +314,39 @@ const heroTechnologies = [
     ),
   },
   {
+    name: "Java",
+    accent: "#EA2D2E",
+    icon: (
+      <TechLogoImage
+        src="/tech/java.png"
+        alt="Java"
+        className="h-14 w-10"
+      />
+    ),
+  },
+  {
+    name: "Spring Boot",
+    accent: "#6DB33F",
+    icon: (
+      <TechLogoImage
+        src="/tech/spring-boot.svg"
+        alt="Spring Boot"
+        className="h-10 w-11"
+      />
+    ),
+  },
+  {
+    name: "Spring Security",
+    accent: "#86C440",
+    icon: (
+      <TechLogoImage
+        src="/tech/spring-security.svg"
+        alt="Spring Security"
+        className="h-11 w-9"
+      />
+    ),
+  },
+  {
     name: "MongoDB",
     accent: "#47A248",
     icon: (
@@ -355,6 +371,11 @@ const heroTechnologies = [
         </svg>
       </TechLogoSvg>
     ),
+  },
+  {
+    name: "PostgreSQL",
+    accent: "#4F86C6",
+    icon: <TechLogoImage src="/tech/postgresql.svg" alt="PostgreSQL" />,
   },
   {
     name: "Git",
@@ -413,6 +434,17 @@ const heroTechnologies = [
           />
         </svg>
       </TechLogoSvg>
+    ),
+  },
+  {
+    name: "Docker",
+    accent: "#2496ED",
+    icon: (
+      <TechLogoImage
+        src="/tech/docker.svg"
+        alt="Docker"
+        className="h-9 w-11"
+      />
     ),
   },
 ];
@@ -503,10 +535,31 @@ const projects = [
     ],
   },
   {
+    name: "NewsExplorer",
+    type: "Search Platform",
+    summary:
+      "NewsExplorer is a full-stack application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated dashboard.",
+    stack: ["React", "Vite", "JavaScript ES6+", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "JWT", "Docker", "REST API"],
+    accent: "from-slate-300 to-teal-300",
+    screenshot: "/newsE.png",
+    screenshotAlt: "NewsExplorer article search app preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://news-explorer-ten.vercel.app/",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/news-explorer-frontend",
+      },
+    ],
+  },
+  {
     name: "Datara",
     type: "Sales Analytics Dashboard",
     summary:
-      "Datara is a responsive front-end sales analytics dashboard focused on clean UI, dashboard-style layouts, interactive data visualization, responsive design, and modern front-end architecture.",
+      "Datara is a responsive sales analytics dashboard that helps teams monitor business performance through interactive data visualizations and key performance metrics. Built with Next.js, React, TypeScript, Material UI, and Chart.js, the application features a clean dashboard layout, secure authentication, responsive navigation, and an intuitive user experience across desktop, tablet, and mobile devices.",
     stack: [
       "React",
       "Next.js",
@@ -556,27 +609,6 @@ const projects = [
       {
         label: "GitHub Repo",
         href: "https://github.com/Alvarez-J1/Elevate",
-      },
-    ],
-  },
-  {
-    name: "NewsExplorer",
-    type: "Search Platform",
-    summary:
-      "NewsExplorer is a React application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated dashboard.",
-    stack: ["React", "JavaScript ES6+", "HTML5", "CSS3", "News API"],
-    accent: "from-slate-300 to-teal-300",
-    screenshot: "/newsE.png",
-    screenshotAlt: "NewsExplorer article search app preview",
-    actions: [
-      {
-        label: "Live Demo",
-        href: "https://news-explorer-ten.vercel.app/",
-        primary: true,
-      },
-      {
-        label: "GitHub Repo",
-        href: "https://github.com/Alvarez-J1/news-explorer-frontend",
       },
     ],
   },
@@ -899,7 +931,7 @@ function Hero() {
             <span className="block">Software Engineer</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9 min-[680px]:max-w-none min-[680px]:text-base min-[680px]:leading-7 md:text-lg md:leading-8 lg:max-w-[52rem] lg:text-xl lg:leading-9">
-           I build responsive full-stack applications using JavaScript, React, Next.js, TypeScript, Node.js, Express, and MongoDB with a focus on clean UI, accessibility, and smooth user experience.
+           I build responsive full-stack applications using React, Next.js, Angular, Java, Spring Boot, Node.js, Express, PostgreSQL, and MongoDB with a focus on clean UI, accessibility, and smooth user experience.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <motion.a
