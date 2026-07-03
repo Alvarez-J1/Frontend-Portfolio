@@ -637,8 +637,30 @@ const projects = [
       },
     ],
   },
-  
-  
+  {
+    name: "MacBook Pro Landing Page",
+    type: "Product Landing Page",
+    summary:
+      "A responsive Apple MacBook Pro product landing page clone inspired by Apple’s official website design system. This project focuses on pixel-perfect UI replication, layout consistency, and responsive behavior across breakpoints.",
+    stack: [
+      "HTML5",
+      "CSS3",
+    ],
+    accent: "from-emerald-300 to-teal-200",
+    screenshot: "/Apple.png",
+    screenshotAlt: "WTWR weather wardrobe app preview",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://mac-book-pro-landing-page-clone.vercel.app/",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/MacBook_Pro_Landing-Page_Clone",
+      },
+    ],
+  },
 ];
 
 
