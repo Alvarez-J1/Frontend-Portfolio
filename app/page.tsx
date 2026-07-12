@@ -507,6 +507,42 @@ const projects = [
     ],
   },
   {
+    name: "Elevate",
+    type: "Electronics E-commerce Storefront",
+    summary:
+      "Elevate is a full-stack ecommerce storefront built with Next.js, React, TypeScript, Tailwind CSS, Java, Spring Boot, and PostgreSQL. It features secure authentication, product browsing and filtering, persistent cart management, checkout, order history, account activity, and a responsive interface across desktop and mobile.",
+    stack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "JWT",
+      "Spring Data JPA",
+      "PostgreSQL",
+      "REST API",
+      "Docker",
+    ],
+    accent: "from-teal-300 to-emerald-200",
+    screenshot: "/ele.png",
+    screenshotAlt: "Elevate screenshot",
+    actions: [
+      {
+        label: "Live Demo",
+        href: "https://elevate-storefront.vercel.app/",
+        primary: true,
+      },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Alvarez-J1/Elevate",
+      },
+    ],
+  },
+  {
     name: "AgencyOS",
     type: "AGENCY MANAGEMENT PLATFORM",
     summary:
@@ -588,34 +624,6 @@ const projects = [
       {
         label: "GitHub Repo",
         href: "https://github.com/Alvarez-J1/se_project_react",
-      },
-    ],
-  },
-  {
-    name: "Elevate",
-    type: "Electronics E-commerce Storefront",
-    summary:
-      "Elevate is a responsive front-end ecommerce storefront built with Next.js, React, TypeScript, and Tailwind CSS. The project focuses on modern ecommerce UI design, responsive layouts, product-focused interfaces, cart functionality, and a polished checkout experience.",
-    stack: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Zustand"
-    ],
-    accent: "from-teal-300 to-emerald-200",
-    screenshot: "/ele.png",
-    screenshotAlt: "Elevate screenshot",
-    actions: [
-      {
-        label: "Live Demo",
-        href: "https://elevate-storefront.vercel.app/",
-        primary: true,
-      },
-      {
-        label: "GitHub Repo",
-        href: "https://github.com/Alvarez-J1/Elevate",
       },
     ],
   },
@@ -877,14 +885,73 @@ function Navbar() {
   );
 }
 
+// Detects real hover capability (mouse/trackpad) so the icon's hover-forward
+// animation never gets triggered — and stuck — by a tap on touch/coarse-pointer devices.
+function useCanHover() {
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return canHover;
+}
+
+// Shared spring used by every technology card's icon hover animation — quick,
+// low-bounce settle rather than an overshooting bounce.
+const TECH_ICON_HOVER_SPRING = {
+  type: "spring" as const,
+  stiffness: 340,
+  damping: 26,
+  mass: 0.8,
+};
+
+// One shared builder for the icon's "move forward" hover/focus treatment —
+// every technology card calls this with its own accent color, so there is a
+// single animation implementation rather than per-technology logic.
+function getTechIconVariants(accent: string, prefersReducedMotion: boolean) {
+  const restFilter = `brightness(1) saturate(1) contrast(1) drop-shadow(0 0 0 ${accent}00)`;
+  const hoverFilter = `brightness(1.15) saturate(1.18) contrast(1.08) drop-shadow(0 0 12px ${accent})`;
+
+  if (prefersReducedMotion) {
+    // Keep the brightness/glow emphasis, but drop all transform motion.
+    return {
+      rest: { filter: restFilter },
+      hover: { filter: hoverFilter, transition: { duration: 0.15 } },
+    };
+  }
+
+  return {
+    rest: { scale: 1, y: 0, filter: restFilter },
+    hover: {
+      scale: 1.18,
+      y: -2,
+      filter: hoverFilter,
+      transition: TECH_ICON_HOVER_SPRING,
+    },
+  };
+}
+
 function AnimatedTechStack({
   className = "mt-8 lg:mt-10",
 }: {
   className?: string;
 } = {}) {
   const prefersReducedMotion = useReducedMotion();
+  const canHover = useCanHover();
   const [activeIndex, setActiveIndex] = useState(0);
   const technologyCount = heroTechnologies.length;
+
+  // The card itself stays put — only its stacking order lifts on hover/focus
+  // so the enlarged, glowing icon can read above neighboring cards.
+  const cardMotionVariants = {
+    rest: { zIndex: 0 },
+    hover: { zIndex: 20 },
+  };
 
   useEffect(() => {
     if (prefersReducedMotion) return;
@@ -903,15 +970,20 @@ function AnimatedTechStack({
         {heroTechnologies.map((tech, index) => {
           const isActive = index === activeIndex;
           return (
-            <button
+            <motion.button
               key={tech.name}
               type="button"
               onClick={() => setActiveIndex(index)}
               onMouseEnter={() => setActiveIndex(index)}
+              initial="rest"
+              animate="rest"
+              whileHover={canHover ? "hover" : undefined}
+              whileFocus="hover"
+              variants={cardMotionVariants}
               className={`group relative flex h-[5.35rem] min-w-0 flex-col items-center justify-center gap-2 overflow-hidden rounded-lg border px-2 text-center backdrop-blur-xl transition-[border-color,background-color,box-shadow,color] duration-300 ${
                 isActive
                   ? "text-frost"
-                  : "border-white/10 bg-white/[0.035] text-slate-400 hover:border-white/20 hover:bg-white/[0.07] hover:text-frost"
+                  : "border-white/10 bg-white/[0.035] text-slate-400 hover:border-white/20 hover:bg-white/[0.07] hover:text-frost focus-visible:text-frost"
               }`}
               style={
                 isActive
@@ -925,16 +997,19 @@ function AnimatedTechStack({
               aria-label={`${tech.name} technology`}
               aria-pressed={isActive}
             >
-              <span className="relative flex size-11 items-center justify-center">
+              <motion.span
+                variants={getTechIconVariants(tech.accent, Boolean(prefersReducedMotion))}
+                className="relative flex size-11 items-center justify-center"
+              >
                 {tech.icon}
-              </span>
+              </motion.span>
               <span
                 className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none transition-colors duration-300 sm:text-xs"
                 style={{ color: isActive ? tech.accent : undefined }}
               >
                 {tech.name}
               </span>
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -1019,21 +1094,40 @@ function Hero() {
 function ProjectScreenshot({
   alt,
   src,
+  href,
 }: {
   alt: string;
   src: string;
+  href?: string;
 }) {
+  const image = (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+    />
+  );
+
+  if (!href) {
+    return (
+      <div className="relative aspect-[16/10] overflow-hidden bg-[#0a1018]">
+        {image}
+      </div>
+    );
+  }
+
   return (
-    <div className="relative aspect-[16/10] overflow-hidden bg-[#0a1018]">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-      />
-    </div>
-  
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Open live demo: ${alt}`}
+      className="relative block aspect-[16/10] cursor-pointer overflow-hidden bg-[#0a1018]"
+    >
+      {image}
+    </a>
   );
 }
 
@@ -1125,6 +1219,7 @@ function Projects() {
               <ProjectScreenshot
                 alt={project.screenshotAlt}
                 src={project.screenshot}
+                href={project.actions.find((action) => action.primary)?.href}
               />
               <div className="flex flex-col p-5 sm:p-6 lg:p-7 lg:flex-1">
                 <div className="mb-4 flex items-start justify-between gap-4 lg:mb-5">
