@@ -546,7 +546,7 @@ const projects = [
     name: "AgencyOS",
     type: "AGENCY MANAGEMENT PLATFORM",
     summary:
-      "AgencyOS is a full-stack agency management platform that helps teams manage clients, projects, and tasks from a single workspace. It features secure authentication, responsive dashboards, complete CRUD functionality, project status tracking, client management, task organization, and personalized user profiles, all powered by a Node.js, Express, and MongoDB backend with a modern Angular frontend.",
+      "AgencyOS is a full-stack agency management platform that helps teams manage clients, projects, and tasks from a single workspace. It features secure authentication, responsive dashboards, complete CRUD functionality, project status tracking, client management, task organization, and personalized user profiles.",
     stack: [
       "Angular",
       "TypeScript",
@@ -559,7 +559,7 @@ const projects = [
       "SCSS"
     ],
     accent: "from-emerald-300 to-teal-200",
-    screenshot: "/AgencyOS.png",
+    screenshot: "/agen.png",
     screenshotAlt: "AgencyOS agency management platform preview",
     actions: [
       {
@@ -577,7 +577,7 @@ const projects = [
     name: "NewsExplorer",
     type: "Search Platform",
     summary:
-      "NewsExplorer is a full-stack application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated dashboard.",
+      "NewsExplorer is a full-stack application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated saved articles page.",
     stack: ["React", "Vite", "JavaScript ES6+", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "JWT", "Docker", "REST API"],
     accent: "from-slate-300 to-teal-300",
     screenshot: "/newsE.png",
@@ -631,7 +631,7 @@ const projects = [
     name: "Code Switcher",
     type: "Marketing Website",
     summary:
-      "A modern SaaS-inspired landing page built with HTML, CSS, and JavaScript. Code Switcher showcases a polished developer-focused interface featuring responsive layouts, animated UI elements, interactive code tabs, syntax highlighting, and a mobile-first navigation experience.",
+      "Code Switcher is a modern SaaS-inspired landing page built with HTML, CSS, and JavaScript. It features interactive language tabs, syntax highlighted code examples, animated UI components, responsive layouts, and a production-quality interface inspired by modern developer tools and authentication platforms. The project focuses on clean visual hierarchy, smooth animations, accessibility, and responsive design across desktop, tablet, and mobile devices.",
     stack: [
       "JavaScript ES6+",
       "HTML5",
