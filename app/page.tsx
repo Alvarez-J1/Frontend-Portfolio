@@ -944,6 +944,7 @@ function AnimatedTechStack({
   const prefersReducedMotion = useReducedMotion();
   const canHover = useCanHover();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [pressedIndex, setPressedIndex] = useState<number | null>(null);
   const technologyCount = heroTechnologies.length;
 
   // The card itself stays put — only its stacking order lifts on hover/focus
@@ -961,6 +962,12 @@ function AnimatedTechStack({
     return () => clearInterval(interval);
   }, [prefersReducedMotion, technologyCount]);
 
+  useEffect(() => {
+    if (pressedIndex === null) return;
+    const timeout = window.setTimeout(() => setPressedIndex(null), 650);
+    return () => window.clearTimeout(timeout);
+  }, [pressedIndex]);
+
   return (
     <div className={`w-full max-w-none lg:max-w-4xl ${className}`}>
       <p className="font-heading text-base font-black uppercase tracking-[0.18em] text-cyanline sm:text-lg">
@@ -969,14 +976,20 @@ function AnimatedTechStack({
       <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
         {heroTechnologies.map((tech, index) => {
           const isActive = index === activeIndex;
+          const isPressed = !canHover && pressedIndex === index;
           return (
             <motion.button
               key={tech.name}
               type="button"
               onClick={() => setActiveIndex(index)}
+              onPointerDown={(event) => {
+                if (canHover || event.pointerType === "mouse") return;
+                setActiveIndex(index);
+                setPressedIndex(index);
+              }}
               onMouseEnter={() => setActiveIndex(index)}
               initial="rest"
-              animate="rest"
+              animate={isPressed ? "hover" : "rest"}
               whileHover={canHover ? "hover" : undefined}
               whileFocus="hover"
               variants={cardMotionVariants}
