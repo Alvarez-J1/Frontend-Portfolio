@@ -548,7 +548,7 @@ const projects = [
     name: "AgencyOS",
     type: "AGENCY MANAGEMENT PLATFORM",
     summary:
-      "AgencyOS is a full-stack agency management platform that helps teams manage clients, projects, and tasks from a single workspace. It features secure authentication, responsive dashboards, complete CRUD functionality, project status tracking, client management, task organization, and personalized user profiles.",
+      "AgencyOS is a full-stack agency management platform that helps teams manage clients, projects, and tasks from a single workspace. It features secure authentication, responsive dashboards, complete CRUD functionality, project status tracking, client management, and task organization, all powered by a Node.js, Express, and MongoDB backend.",
     stack: [
       "Angular",
       "TypeScript",
