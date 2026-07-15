@@ -19,13 +19,13 @@ import {
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 
-const TECH_LOGO_SIZE = 44;
+const TECH_LOGO_SIZE = 72;
 
 const techIconClass = "h-full w-full shrink-0 overflow-visible";
 
 function TechIcon({
   children,
-  className = "size-11",
+  className = "h-full w-full",
 }: {
   children: ReactNode;
   className?: string;
@@ -45,9 +45,9 @@ function TechLogoSlot({
   className?: string;
 }) {
   return (
-    <span className="flex size-11 shrink-0 items-center justify-center">
+    <span className="flex h-full w-full shrink-0 items-center justify-center">
       <span
-        className={`flex items-center justify-center drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)] ${className}`}
+        className={`flex h-[88%] w-[88%] items-center justify-center drop-shadow-[0_6px_12px_rgba(0,0,0,0.35)] ${className}`}
       >
         {children}
       </span>
@@ -58,7 +58,7 @@ function TechLogoSlot({
 function TechLogoImage({
   alt,
   src,
-  className = "size-10",
+  className = "",
 }: {
   alt: string;
   src: string;
@@ -81,7 +81,7 @@ function TechLogoImage({
 
 function TechLogoSvg({
   children,
-  className = "size-10",
+  className = "",
 }: {
   children: ReactNode;
   className?: string;
@@ -95,13 +95,13 @@ function TechLogoSvg({
 
 function NextTechLogo() {
   return (
-    <TechIcon className="size-11">
+    <TechIcon>
       <Image
         src="/tech/nextjs.svg"
         alt="Next.js"
-        width={44}
-        height={44}
-        className="size-10 object-contain object-center drop-shadow-[0_0_16px_rgba(255,255,255,0.16)]"
+        width={TECH_LOGO_SIZE}
+        height={TECH_LOGO_SIZE}
+        className="size-[88%] object-contain object-center drop-shadow-[0_0_16px_rgba(255,255,255,0.16)]"
       />
     </TechIcon>
   );
@@ -117,7 +117,7 @@ const heroTechnologies = [
     name: "TypeScript",
     accent: "#3178C6",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#3178C6"
@@ -131,7 +131,7 @@ const heroTechnologies = [
     name: "React",
     accent: "#61DAFB",
     icon: (
-      <TechLogoSvg className="h-10 w-11">
+      <TechLogoSvg className="h-[78%] w-[96%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <circle cx="12" cy="12" r="2.15" fill="#61DAFB" />
           <ellipse
@@ -176,7 +176,7 @@ const heroTechnologies = [
     name: "Angular",
     accent: "#DD0031",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#DD0031"
@@ -192,24 +192,24 @@ const heroTechnologies = [
     icon: <TechLogoImage src="/tech/rxjs.png" alt="RxJS" />,
   },
   {
-    name: "HTML",
+    name: "HTML5",
     accent: "#E34F26",
     icon: (
       <TechLogoImage
         src="/tech/html5.svg"
         alt="HTML"
-        className="h-[2.7rem] w-[2.45rem]"
+        className="h-[92%] w-[76%]"
       />
     ),
   },
   {
-    name: "CSS",
+    name: "CSS3",
     accent: "#1572B6",
     icon: (
       <TechLogoImage
         src="/tech/css3.svg"
         alt="CSS"
-        className="h-[2.7rem] w-[2.45rem]"
+        className="h-[92%] w-[76%]"
       />
     ),
   },
@@ -217,7 +217,7 @@ const heroTechnologies = [
     name: "Tailwind CSS",
     accent: "#38BDF8",
     icon: (
-      <TechLogoSvg className="h-9 w-11">
+      <TechLogoSvg className="h-[68%] w-[98%]">
         <svg viewBox="0 0 48 29" className={techIconClass} aria-hidden>
           <path
             fill="#38bdf8"
@@ -231,7 +231,7 @@ const heroTechnologies = [
     name: "Sass",
     accent: "#CC6699",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#CC6699"
@@ -245,7 +245,7 @@ const heroTechnologies = [
     name: "MUI",
     accent: "#007FFF",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#007FFF"
@@ -259,7 +259,7 @@ const heroTechnologies = [
     name: "Node.js",
     accent: "#68A063",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#68a063"
@@ -288,7 +288,7 @@ const heroTechnologies = [
     name: "Express",
     accent: "#D1D5DB",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <rect
             x="1.25"
@@ -320,7 +320,7 @@ const heroTechnologies = [
       <TechLogoImage
         src="/tech/java.png"
         alt="Java"
-        className="h-14 w-10"
+        className="h-full w-[72%]"
       />
     ),
   },
@@ -331,7 +331,7 @@ const heroTechnologies = [
       <TechLogoImage
         src="/tech/spring-boot.svg"
         alt="Spring Boot"
-        className="h-10 w-11"
+        className="h-[82%] w-[94%]"
       />
     ),
   },
@@ -342,7 +342,7 @@ const heroTechnologies = [
       <TechLogoImage
         src="/tech/spring-security.svg"
         alt="Spring Security"
-        className="h-11 w-9"
+        className="h-[90%] w-[72%]"
       />
     ),
   },
@@ -350,7 +350,7 @@ const heroTechnologies = [
     name: "MongoDB",
     accent: "#47A248",
     icon: (
-      <TechLogoSvg className="h-11 w-9">
+      <TechLogoSvg className="h-[96%] w-[68%]">
         <svg
           viewBox="8.738 -5.036 17.46 39.406"
           className={techIconClass}
@@ -381,7 +381,7 @@ const heroTechnologies = [
     name: "Git",
     accent: "#F05032",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg viewBox="0 0 24 24" className={techIconClass} aria-hidden>
           <path
             fill="#F05032"
@@ -395,7 +395,7 @@ const heroTechnologies = [
     name: "Vite",
     accent: "#A855F7",
     icon: (
-      <TechLogoSvg className="size-10">
+      <TechLogoSvg className="size-[88%]">
         <svg
           viewBox="-1.871 -0.407 259.721 257.849"
           className={techIconClass}
@@ -443,11 +443,13 @@ const heroTechnologies = [
       <TechLogoImage
         src="/tech/docker.svg"
         alt="Docker"
-        className="h-9 w-11"
+        className="h-[76%] w-[96%]"
       />
     ),
   },
 ];
+
+const heroMarqueeTechnologies = heroTechnologies;
 
 
 const navItems = [
@@ -492,7 +494,7 @@ const projects = [
       "Docker",
     ],
     accent: "from-teal-300 to-slate-400",
-    screenshot: "/datara1.png",
+    screenshot: "/dr.png",
     screenshotAlt: "Datara sales analytics dashboard screenshot",
     actions: [
       {
@@ -559,7 +561,7 @@ const projects = [
       "SCSS"
     ],
     accent: "from-emerald-300 to-teal-200",
-    screenshot: "/aw.png",
+    screenshot: "/at.png",
     screenshotAlt: "AgencyOS agency management platform preview",
     actions: [
       {
@@ -580,7 +582,7 @@ const projects = [
       "NewsExplorer is a full-stack application that allows users to search for news articles by keyword and browse the latest headlines through a clean, responsive interface. Users can create an account, save articles to their personal collection, and easily manage their saved stories from a dedicated saved articles page.",
     stack: ["React", "Vite", "JavaScript ES6+", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "JWT", "Docker", "REST API"],
     accent: "from-slate-300 to-teal-300",
-    screenshot: "/newsE.png",
+    screenshot: "/n.png",
     screenshotAlt: "NewsExplorer article search app preview",
     actions: [
       {
@@ -638,7 +640,7 @@ const projects = [
       "CSS3",
     ],
     accent: "from-teal-300 to-slate-300",
-    screenshot: "/codeswitch.png",
+    screenshot: "/code.png",
     screenshotAlt: "WTWR weather wardrobe app preview",
     actions: [
       {
@@ -885,8 +887,6 @@ function Navbar() {
   );
 }
 
-// Detects real hover capability (mouse/trackpad) so the icon's hover-forward
-// animation never gets triggered — and stuck — by a tap on touch/coarse-pointer devices.
 function useCanHover() {
   const [canHover, setCanHover] = useState(false);
 
@@ -901,8 +901,6 @@ function useCanHover() {
   return canHover;
 }
 
-// Shared spring used by every technology card's icon hover animation — quick,
-// low-bounce settle rather than an overshooting bounce.
 const TECH_ICON_HOVER_SPRING = {
   type: "spring" as const,
   stiffness: 340,
@@ -910,15 +908,11 @@ const TECH_ICON_HOVER_SPRING = {
   mass: 0.8,
 };
 
-// One shared builder for the icon's "move forward" hover/focus treatment —
-// every technology card calls this with its own accent color, so there is a
-// single animation implementation rather than per-technology logic.
 function getTechIconVariants(accent: string, prefersReducedMotion: boolean) {
   const restFilter = `brightness(1) saturate(1) contrast(1) drop-shadow(0 0 0 ${accent}00)`;
   const hoverFilter = `brightness(1.15) saturate(1.18) contrast(1.08) drop-shadow(0 0 12px ${accent})`;
 
   if (prefersReducedMotion) {
-    // Keep the brightness/glow emphasis, but drop all transform motion.
     return {
       rest: { filter: restFilter },
       hover: { filter: hoverFilter, transition: { duration: 0.15 } },
@@ -936,6 +930,24 @@ function getTechIconVariants(accent: string, prefersReducedMotion: boolean) {
   };
 }
 
+function getTechLabelVariants(prefersReducedMotion: boolean) {
+  if (prefersReducedMotion) {
+    return {
+      rest: { opacity: 0 },
+      hover: { opacity: 1, transition: { duration: 0.15 } },
+    };
+  }
+
+  return {
+    rest: { opacity: 0, y: 5 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.18, ease: "easeOut" as const },
+    },
+  };
+}
+
 function AnimatedTechStack({
   className = "mt-8 lg:mt-10",
 }: {
@@ -943,88 +955,73 @@ function AnimatedTechStack({
 } = {}) {
   const prefersReducedMotion = useReducedMotion();
   const canHover = useCanHover();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [pressedIndex, setPressedIndex] = useState<number | null>(null);
-  const technologyCount = heroTechnologies.length;
-
-  // The card itself stays put — only its stacking order lifts on hover/focus
-  // so the enlarged, glowing icon can read above neighboring cards.
-  const cardMotionVariants = {
-    rest: { zIndex: 0 },
-    hover: { zIndex: 20 },
-  };
+  const marqueeSets = [0, 1];
+  const [pressedLogoKey, setPressedLogoKey] = useState<string | null>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % technologyCount);
-    }, 2600);
-    return () => clearInterval(interval);
-  }, [prefersReducedMotion, technologyCount]);
-
-  useEffect(() => {
-    if (pressedIndex === null) return;
-    const timeout = window.setTimeout(() => setPressedIndex(null), 650);
+    if (pressedLogoKey === null) return;
+    const timeout = window.setTimeout(() => setPressedLogoKey(null), 650);
     return () => window.clearTimeout(timeout);
-  }, [pressedIndex]);
+  }, [pressedLogoKey]);
 
   return (
     <div className={`w-full max-w-none lg:max-w-4xl ${className}`}>
       <p className="font-heading text-base font-black uppercase tracking-[0.18em] text-cyanline sm:text-lg">
         Working with modern technologies
       </p>
-      <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
-        {heroTechnologies.map((tech, index) => {
-          const isActive = index === activeIndex;
-          const isPressed = !canHover && pressedIndex === index;
-          return (
-            <motion.button
-              key={tech.name}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              onPointerDown={(event) => {
-                if (canHover || event.pointerType === "mouse") return;
-                setActiveIndex(index);
-                setPressedIndex(index);
-              }}
-              onMouseEnter={() => setActiveIndex(index)}
-              initial="rest"
-              animate={isPressed ? "hover" : "rest"}
-              whileHover={canHover ? "hover" : undefined}
-              whileFocus="hover"
-              variants={cardMotionVariants}
-              className={`group relative flex h-[5.35rem] min-w-0 flex-col items-center justify-center gap-2 overflow-hidden rounded-lg border px-2 text-center backdrop-blur-xl transition-[border-color,background-color,box-shadow,color] duration-300 ${
-                isActive
-                  ? "text-frost"
-                  : "border-white/10 bg-white/[0.035] text-slate-400 hover:border-white/20 hover:bg-white/[0.07] hover:text-frost focus-visible:text-frost"
-              }`}
-              style={
-                isActive
-                  ? {
-                      borderColor: `${tech.accent}66`,
-                      background: `linear-gradient(145deg, ${tech.accent}14, rgba(255, 255, 255, 0.05) 44%, rgba(8, 13, 20, 0.82))`,
-                      boxShadow: `0 12px 32px ${tech.accent}18, inset 0 1px 0 rgba(255, 255, 255, 0.075)`,
-                    }
-                  : undefined
-              }
-              aria-label={`${tech.name} technology`}
-              aria-pressed={isActive}
+      <div
+        className="tech-marquee mt-5"
+        role="list"
+        aria-label="Technologies"
+      >
+        <div className="tech-marquee__track">
+          {marqueeSets.map((setIndex) => (
+            <div
+              key={setIndex}
+              className="tech-marquee__group"
+              aria-hidden={setIndex === 1}
             >
-              <motion.span
-                variants={getTechIconVariants(tech.accent, Boolean(prefersReducedMotion))}
-                className="relative flex size-11 items-center justify-center"
-              >
-                {tech.icon}
-              </motion.span>
-              <span
-                className="relative block max-w-full truncate text-[0.72rem] font-bold leading-none transition-colors duration-300 sm:text-xs"
-                style={{ color: isActive ? tech.accent : undefined }}
-              >
-                {tech.name}
-              </span>
-            </motion.button>
-          );
-        })}
+              {heroMarqueeTechnologies.map((tech) => {
+                const logoKey = `${setIndex}-${tech.name}`;
+
+                return (
+                  <motion.div
+                    key={logoKey}
+                    className="tech-marquee__item"
+                    role={setIndex === 0 ? "listitem" : undefined}
+                    aria-label={setIndex === 0 ? tech.name : undefined}
+                    initial="rest"
+                    animate={!canHover && pressedLogoKey === logoKey ? "hover" : "rest"}
+                    whileHover={canHover ? "hover" : undefined}
+                    onPointerDown={(event) => {
+                      if (canHover || event.pointerType === "mouse") return;
+                      setPressedLogoKey(logoKey);
+                    }}
+                  >
+                    <motion.span
+                      className="tech-marquee__logo"
+                      aria-hidden="true"
+                      variants={getTechIconVariants(
+                        tech.accent,
+                        Boolean(prefersReducedMotion),
+                      )}
+                    >
+                      {tech.icon}
+                    </motion.span>
+                    <motion.span
+                      className="tech-marquee__label"
+                      aria-hidden="true"
+                      style={{ color: tech.accent }}
+                      variants={getTechLabelVariants(Boolean(prefersReducedMotion))}
+                    >
+                      {tech.name}
+                    </motion.span>
+                  </motion.div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -1034,7 +1031,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:min-h-0 lg:max-w-7xl lg:items-start lg:px-8 lg:pb-8 lg:pt-32 min-[1440px]:pt-40 2xl:pt-44"
+      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:max-w-7xl lg:items-start lg:px-8 lg:pb-8 lg:pt-32 min-[1440px]:pt-40 2xl:pt-44"
     >
       <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.22fr)_minmax(12.25rem,0.68fr)] min-[680px]:items-start min-[680px]:gap-x-5 min-[680px]:gap-y-0 md:grid-cols-[minmax(0,1.28fr)_minmax(13.5rem,0.72fr)] md:gap-x-6 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-start lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
         <motion.div
@@ -1452,7 +1449,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-x-hidden">
       <AmbientBackground />
       <Navbar />
       <Hero />
