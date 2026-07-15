@@ -1315,9 +1315,9 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   
     <section id="contact" className="px-4 pb-14 pt-6 sm:px-6 sm:py-14 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.04fr)_minmax(26rem,0.96fr)] lg:items-stretch lg:gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(28rem,0.92fr)] xl:gap-6">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.04fr)_minmax(26rem,0.96fr)] lg:items-start lg:gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(28rem,0.92fr)] xl:gap-6">
             <motion.div
-              className="glass-panel relative overflow-hidden rounded-[1.5rem] p-5 sm:p-7 lg:h-full lg:rounded-[2rem] lg:p-8 xl:p-10"
+              className="glass-panel relative overflow-hidden rounded-[1.5rem] p-5 sm:p-7 lg:rounded-[2rem] lg:p-8 xl:p-10"
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-120px" }}
@@ -1334,53 +1334,53 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 <p className="mt-4 max-w-[38rem] text-base leading-7 text-slate-300 lg:mt-5 lg:text-lg lg:leading-8">
                 I&apos;m open to developer roles, collaborations, and projects focused on building modern, user-friendly web experiences.
                 </p>
-                <div className="mt-5 grid gap-3 lg:mt-6 lg:gap-3">
+                <div className="mt-5 grid auto-rows-fr grid-cols-1 gap-3 sm:gap-4 md:grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] lg:mt-6 lg:grid-cols-2 lg:gap-6 xl:gap-7">
                   <a
                     href="mailto:jge4991@gmail.com"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
+                    className="flex h-full min-h-[4.5rem] items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:min-h-[5rem] lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-11 lg:w-11 lg:rounded-2xl xl:h-12 xl:w-12">
                       <Mail size={19} />
                     </span>
-                    <span>
+                    <span className="min-w-0">
                       <span className="block text-xs text-slate-400 lg:text-sm">Email</span>
                       <span className="text-sm font-bold text-frost lg:text-base">Joel124@outlook.es</span>
                     </span>
                   </a>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 lg:gap-3.5 lg:rounded-2xl lg:p-3.5">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-11 lg:w-11 lg:rounded-2xl xl:h-12 xl:w-12">
-                      <MapPin size={19} />
-                    </span>
-                    <span>
-                      <span className="block text-xs text-slate-400 lg:text-sm">Location</span>
-                      <span className="text-sm font-bold text-frost lg:text-base">Union City, New Jersey</span>
-                    </span>
-                  </div>
                   <a
                     href="https://github.com/Alvarez-J1"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
+                    className="flex h-full min-h-[4.5rem] items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:min-h-[5rem] lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-ink lg:h-11 lg:w-11 lg:rounded-2xl xl:h-12 xl:w-12">
                       <GithubIcon size={20} />
                     </span>
-                    <span>
+                    <span className="min-w-0">
                       <span className="block text-xs text-slate-400 lg:text-sm">GitHub</span>
                       <span className="text-sm font-bold text-frost lg:text-base">Alvarez-J1</span>
                     </span>
                     
                   </a>
+                  <div className="flex h-full min-h-[4.5rem] items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 lg:min-h-[5rem] lg:gap-3.5 lg:rounded-2xl lg:p-3.5">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-electric/20 text-cyanline lg:h-11 lg:w-11 lg:rounded-2xl xl:h-12 xl:w-12">
+                      <MapPin size={19} />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-xs text-slate-400 lg:text-sm">Location</span>
+                      <span className="text-sm font-bold text-frost lg:text-base">Union City, New Jersey</span>
+                    </span>
+                  </div>
                    <a
                     href="https://www.linkedin.com/in/joel-alvarez-software-engineer/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
+                    className="flex h-full min-h-[4.5rem] items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:min-h-[5rem] lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
                   >
                     <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0a66c2] text-frost lg:h-11 lg:w-11 lg:rounded-2xl xl:h-12 xl:w-12">
                       <LinkedInIcon size={20} />
                     </span>
-                    <span>
+                    <span className="min-w-0">
                       <span className="block text-xs text-slate-400 lg:text-sm">LinkedIn</span>
                       <span className="text-sm font-bold text-frost lg:text-base">Joel Alvarez</span>
                     </span>
@@ -1421,7 +1421,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               <label className="mb-5 block lg:mb-6">
                 <span className="mb-2 block text-sm font-bold text-frost">Message</span>
                 <textarea
-                  className="min-h-28 w-full resize-none rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-frost outline-none transition placeholder:text-slate-500 focus:border-electric/60 focus:ring-4 focus:ring-electric/10 sm:min-h-32 lg:min-h-44 lg:rounded-2xl lg:py-4 lg:text-base"
+                  className="min-h-28 w-full resize-none rounded-xl border border-white/10 bg-ink/70 px-4 py-3 text-sm text-frost outline-none transition placeholder:text-slate-500 focus:border-electric/60 focus:ring-4 focus:ring-electric/10 sm:min-h-32 lg:min-h-20 lg:rounded-2xl lg:py-4 lg:text-base"
                   placeholder="Tell me about the role, team, or project..."
                   name="message"
                 />
