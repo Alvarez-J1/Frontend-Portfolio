@@ -620,7 +620,7 @@ const projects = [
     actions: [
       {
         label: "Live Demo",
-        href: "https://weatherfit-app.onrender.com/",
+        href: "https://weather-fit-phi.vercel.app/",
         primary: true,
       },
       {
