@@ -1031,7 +1031,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:px-6 md:px-8 lg:max-w-7xl lg:items-start lg:px-8 lg:pb-8 lg:pt-32 min-[1440px]:pt-40 2xl:pt-44"
+      className="relative mx-auto flex min-h-screen w-full max-w-none items-center px-3 pb-10 pt-28 sm:px-4 sm:pb-16 min-[680px]:min-h-0 min-[680px]:px-6 min-[680px]:pb-16 md:px-8 lg:max-w-7xl lg:items-start lg:px-8 lg:pb-8 lg:pt-32 min-[1440px]:pt-40 2xl:pt-44"
     >
       <div className="grid w-full items-center gap-x-6 gap-y-7 min-[680px]:grid-cols-[minmax(0,1.22fr)_minmax(12.25rem,0.68fr)] min-[680px]:items-start min-[680px]:gap-x-5 min-[680px]:gap-y-0 md:grid-cols-[minmax(0,1.28fr)_minmax(13.5rem,0.72fr)] md:gap-x-6 lg:grid-cols-[minmax(0,1.22fr)_minmax(21rem,0.76fr)] lg:items-start lg:gap-x-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(24rem,0.72fr)] xl:gap-x-5">
         <motion.div
@@ -1081,7 +1081,7 @@ function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-glass backdrop-blur-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-electric/10" />
               <Image
-                src="/park.png"
+                src="/linkedin.png"
                 alt="Joel Alvarez portrait"
                 width={700}
                 height={700}
@@ -1315,7 +1315,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   
     <section id="contact" className="px-4 pb-14 pt-6 sm:px-6 sm:py-14 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.04fr)_minmax(26rem,0.96fr)] lg:items-start lg:gap-5 xl:grid-cols-[minmax(0,1.08fr)_minmax(28rem,0.92fr)] xl:gap-6">
+        <div className="mx-auto grid w-full max-w-[56rem] gap-5 xl:max-w-7xl xl:grid-cols-2 xl:items-start xl:gap-6">
             <motion.div
               className="glass-panel relative overflow-hidden rounded-[1.5rem] p-5 sm:p-7 lg:rounded-[2rem] lg:p-8 xl:p-10"
               initial={{ opacity: 0, x: -24 }}
@@ -1325,16 +1325,36 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-electric/12 via-transparent to-transparent" />
               <div className="relative w-full max-w-[43rem]">
+                <div className="relative md:min-h-[14rem]">
+                  <div className="pointer-events-none absolute right-0 top-[-0.25rem] hidden aspect-square w-[13.25rem] overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-glass md:block xl:w-[13rem]">
+                    <Image
+                      src="/park.png"
+                      alt=""
+                      fill
+                      sizes="(min-width: 1280px) 208px, (min-width: 768px) 212px"
+                      className="object-cover object-top"
+                    />
+                  </div>
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyanline sm:text-base lg:text-lg">
                   Contact
                 </p>
-                <h2 className="max-w-[34rem] text-balance font-heading text-4xl font-black leading-tight text-frost sm:text-5xl lg:text-6xl">
+                <h2 className="max-w-none whitespace-nowrap pr-0 font-heading text-4xl font-black leading-tight text-frost sm:text-[2.85rem] md:pr-[15rem] md:text-[3rem] xl:pr-[14rem] xl:text-[2.25rem]">
                   Let&apos;s Connect!
                 </h2>
-                <p className="mt-4 max-w-[38rem] text-base leading-7 text-slate-300 lg:mt-5 lg:text-lg lg:leading-8">
+                <p className="mt-4 max-w-[38rem] pr-0 text-base leading-7 text-slate-300 md:pr-[15rem] xl:pr-[14rem]">
                 I&apos;m open to developer roles, collaborations, and projects focused on building modern, user-friendly web experiences.
                 </p>
-                <div className="mt-5 grid auto-rows-fr grid-cols-1 gap-3 sm:gap-4 md:grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] lg:mt-6 lg:grid-cols-2 lg:gap-6 xl:gap-7">
+                <div className="relative mx-auto mt-5 aspect-[4/3] w-full max-w-[16rem] overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-glass md:hidden">
+                  <Image
+                    src="/park.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 767px) 256px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                </div>
+                <div className="mt-5 grid auto-rows-fr grid-cols-1 gap-3 sm:gap-4 md:mt-6 lg:grid-cols-2 lg:gap-4 xl:gap-6">
                   <a
                     href="mailto:jge4991@gmail.com"
                     className="flex h-full min-h-[4.5rem] items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 transition hover:border-electric/40 hover:bg-white/10 lg:min-h-[5rem] lg:gap-3.5 lg:rounded-2xl lg:p-3.5"
