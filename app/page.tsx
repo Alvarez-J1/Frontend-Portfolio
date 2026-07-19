@@ -561,7 +561,7 @@ const projects = [
       "SCSS"
     ],
     accent: "from-emerald-300 to-teal-200",
-    screenshot: "/at.png",
+    screenshot: "/aqw.png",
     screenshotAlt: "AgencyOS agency management platform preview",
     actions: [
       {
