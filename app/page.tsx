@@ -1342,7 +1342,9 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   Let&apos;s Connect!
                 </h2>
                 <p className="mt-4 w-full max-w-none pr-0 text-base leading-7 text-slate-300 md:max-w-[calc(100%-14.5rem)] xl:max-w-[calc(100%-13.75rem)]">
-                  <span className="md:whitespace-nowrap">I&apos;m open to developer roles, collaborations,</span>{" "}
+                  I&apos;m open to developer roles,<span className="xl:max-[1314px]:hidden"> </span>
+                  <br className="hidden xl:max-[1314px]:block" />
+                  <span className="min-[1315px]:whitespace-nowrap">collaborations,</span>{" "}
                   and projects focused on building modern, user-friendly web experiences.
                 </p>
                 <div className="relative mx-auto mt-5 aspect-[4/3] w-full max-w-[16rem] overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-glass md:hidden">
