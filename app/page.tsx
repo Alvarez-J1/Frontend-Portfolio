@@ -1324,7 +1324,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               transition={{ duration: 0.65 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-electric/12 via-transparent to-transparent" />
-              <div className="relative w-full max-w-[43rem]">
+              <div className="relative w-full max-w-none">
                 <div className="relative md:min-h-[14rem]">
                   <div className="pointer-events-none absolute right-0 top-[-0.25rem] hidden aspect-square w-[13.25rem] overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-glass md:block xl:w-[13rem]">
                     <Image
@@ -1341,8 +1341,9 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 <h2 className="max-w-none whitespace-nowrap pr-0 font-heading text-4xl font-black leading-tight text-frost sm:text-[2.85rem] md:pr-[15rem] md:text-[3rem] xl:pr-[14rem] xl:text-[2.25rem]">
                   Let&apos;s Connect!
                 </h2>
-                <p className="mt-4 max-w-[38rem] pr-0 text-base leading-7 text-slate-300 md:pr-[15rem] xl:pr-[14rem]">
-                I&apos;m open to developer roles, collaborations, and projects focused on building modern, user-friendly web experiences.
+                <p className="mt-4 w-full max-w-none pr-0 text-base leading-7 text-slate-300 md:max-w-[calc(100%-14.5rem)] xl:max-w-[calc(100%-13.75rem)]">
+                  <span className="md:whitespace-nowrap">I&apos;m open to developer roles, collaborations,</span>{" "}
+                  and projects focused on building modern, user-friendly web experiences.
                 </p>
                 <div className="relative mx-auto mt-5 aspect-[4/3] w-full max-w-[16rem] overflow-hidden rounded-2xl border border-white/10 bg-black/20 shadow-glass md:hidden">
                   <Image
