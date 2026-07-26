@@ -494,8 +494,8 @@ const projects = [
       "Docker",
     ],
     accent: "from-teal-300 to-slate-400",
-    screenshot: "/dr.png",
-    screenshotAlt: "Datara sales analytics dashboard screenshot",
+    screenshot: "/datara-executive-overview.png",
+    screenshotAlt: "Datara executive overview revenue analytics dashboard screenshot",
     actions: [
       {
         label: "Live Demo",
@@ -530,8 +530,8 @@ const projects = [
       "Docker",
     ],
     accent: "from-teal-300 to-emerald-200",
-    screenshot: "/ele.png",
-    screenshotAlt: "Elevate screenshot",
+    screenshot: "/elevate-shop-catalog.png",
+    screenshotAlt: "Elevate shop catalog page screenshot",
     actions: [
       {
         label: "Live Demo",
