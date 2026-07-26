@@ -949,7 +949,7 @@ function getTechLabelVariants(prefersReducedMotion: boolean) {
 }
 
 function AnimatedTechStack({
-  className = "mt-8 lg:mt-10",
+  className = "",
 }: {
   className?: string;
 } = {}) {
@@ -966,14 +966,7 @@ function AnimatedTechStack({
 
   return (
     <div className={`w-full max-w-none lg:max-w-4xl ${className}`}>
-      <p className="font-heading text-base font-black uppercase tracking-[0.18em] text-cyanline sm:text-lg">
-        Working with modern technologies
-      </p>
-      <div
-        className="tech-marquee mt-5"
-        role="list"
-        aria-label="Technologies"
-      >
+      <div className="tech-marquee" role="list" aria-label="Technologies">
         <div className="tech-marquee__track">
           {marqueeSets.map((setIndex) => (
             <div
@@ -991,10 +984,10 @@ function AnimatedTechStack({
                     role={setIndex === 0 ? "listitem" : undefined}
                     aria-label={setIndex === 0 ? tech.name : undefined}
                     initial="rest"
-                    animate={!canHover && pressedLogoKey === logoKey ? "hover" : "rest"}
+                    animate={pressedLogoKey === logoKey ? "hover" : "rest"}
                     whileHover={canHover ? "hover" : undefined}
                     onPointerDown={(event) => {
-                      if (canHover || event.pointerType === "mouse") return;
+                      if (event.pointerType === "mouse") return;
                       setPressedLogoKey(logoKey);
                     }}
                   >
@@ -1391,7 +1384,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                     </span>
                     <span className="min-w-0">
                       <span className="block text-xs text-slate-400 lg:text-sm">Location</span>
-                      <span className="text-sm font-bold text-frost lg:text-base">Union City, New Jersey</span>
+                      <span className="text-sm font-bold text-frost lg:text-base">Union City, NJ</span>
                     </span>
                   </div>
                    <a
